@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.video-wrapper {
+    @apply absolute inset-0 z-0;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-wrapper iframe {
+    @apply absolute top-0 left-0 w-full h-full;
+}
+
+.stop-watch {
+    @apply relative flex items-center justify-center;
+    color: #06f1f6;
+    text-shadow: 1px 1px 7px;
+}
+
+.stop-watch section {
+    @apply flex flex-col justify-center items-center p-4;
+}
+
+.stop-watch section p {
+    @apply text-5xl
+}
