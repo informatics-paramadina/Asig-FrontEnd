@@ -6,7 +6,7 @@ export default function Schedule() {
             <div className="flex justify-start w-auto">
                 <h2 className="text-2xl font-semibold text-purple-700 my-10">Gaming Gear</h2>
             </div>
-            <div className="grid grid-rows-3 grid-cols-8 gap-5">
+            <div className="grid grid-rows-3 grid-cols-4 md:grid-cols-8 gap-5">
                 <div className="row-span-3 col-span-4">
                     <img src="/images/content/game-gear-1.jpg" className="object-cover" alt="" />
                     <div className="mt-4">
@@ -15,7 +15,7 @@ export default function Schedule() {
                     </div>
                 </div>
                 <div className="row-span-1 col-span-2">
-                    <img src="/images/content/game-gear-3.jpg" className="object-cover" alt="" />
+                    <img src="/images/content/game-gear-3.png" className="object-cover" alt="" />
                     <div className="mt-4">
                         <h3 className="text-white font-teal text-lg my-3">The Most Powerfull CPU the Specifications</h3>
                     </div>
