@@ -27,7 +27,7 @@ module.exports = {
         500: "#a0aec0",
         600: "#4f566b",
         700: "#4a5568",
-        800: "#2d3748",
+        800: "#0A0A0A",
         900: "#040305",
       },
       red: {
@@ -35,7 +35,7 @@ module.exports = {
         200: "#fed7d7",
         300: "#feb2b2",
         400: "#fc8181",
-        500: "#f56565",
+        500: "#bc0000",
         600: "#E0195D",
         700: "#c53030",
         800: "#9b2c2c",
@@ -117,6 +117,7 @@ module.exports = {
         700: "#a5198f",
         800: "#553c9a",
         900: "#282151",
+        1000: "#10002b"
       },
       pink: {
         100: "#fff5f7",
@@ -305,7 +306,7 @@ module.exports = {
       '2xl': '0 25px 25px rgba(0, 0, 0, 0.15)',
       none: '0 0 #0000',
     },
-    fill: { current: 'currentColor' },
+    fill: { current: 'currentColor', ...colors },
     grayscale: {
       0: '0',
       DEFAULT: '100%',

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Schedule() {
     return (
-        <div className="container mx-auto w-4/5">
+        <section className="container mx-auto w-4/5">
             <div className="flex justify-start w-auto">
                 <h2 className="text-2xl font-semibold text-purple-700 my-10">Gaming Gear</h2>
             </div>
@@ -39,6 +39,6 @@ export default function Schedule() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
