@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("remixicon/fonts/remixicon.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.video-wrapper {
+  @apply absolute inset-0 z-0;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+.stop-watch {
+  @apply relative flex items-center justify-center;
+  color: #06f1f6;
+  text-shadow: 1px 1px 7px;
+}
+
+.stop-watch section {
+  @apply flex flex-col justify-center items-center p-4;
+}
+
+.stop-watch section p {
+  @apply text-5xl;
+}
+
+.slick-arrow {
+  @apply hidden;
+}
+
+.social-links a {
+  @apply inline-block h-10 w-10 leading-10 rounded-full px-1;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-links a:nth-child(2) {
+  margin-left: 1.25rem;
+}
+
+.social-links a:nth-last-child(1) {
+  margin-left: 1.25rem;
+}
+
+.social-links a:hover {
+  transition: all 0.3s ease;
+  @apply bg-purple-700 text-black;
+}
+
+.wrapper-schedulee {
+  background-image: linear-gradient(to right, #07142e, #094661);
+}
+
+.wrapper-schedule {
+  background-image: linear-gradient(to right, #0a2147, #263a9f);
+}
+
+.PhoneInputInput {
+  @apply w-full px-6 py-3 focus:outline-none border border-gray-600;
+}
+
+.input {
+  @apply w-full px-6 py-3 focus:outline-none border;
+}
