@@ -101,7 +101,13 @@ function RegisterGamePlayer({history}) {
         formData.append('team_name', team_name);
         formData.append('logo', image);
 
+        var check = JSON.parse(localStorage.getItem('ASIG:token'));
+
+
         fetch(`https://api.himti.my.id/register/game`,{
+            headers: {
+              'Authorization': 'Bearer ' + check.token
+            },
             body:formData,
             method: "POST",
         } 
