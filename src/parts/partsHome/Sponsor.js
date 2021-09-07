@@ -16,7 +16,7 @@ function SampleArrow() {
 export default function Sponsor() {
 
     return (
-        <section className="bg-gray-800">
+        <section className="">
             <div className="container mx-auto">
                 <div className="flex justify-start">
                     <h2 className="text-xl font-semibold text-white mt-5"><span className="font-medium text-blue-600">PROUD</span> <br />PARTNERS</h2>

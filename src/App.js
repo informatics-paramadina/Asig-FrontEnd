@@ -17,6 +17,7 @@ import Sertifikat from 'parts/partsDasboard/Sertifikat';
 import RGame from 'pages/RGame';
 import RMiniGame from 'pages/RMiniGame';
 import RTalkShow from 'pages/RTalkShow';
+import Anim from 'pages/Anim';
 
 function App() {
   const dispatch = useDispatch()
@@ -26,6 +27,7 @@ function App() {
     if (localStorage.getItem("ASIG:token")) {
       session = JSON.parse(localStorage.getItem("ASIG:token"));
       setAuthorizationHeader(session.token);
+
       users.details().then((details) => {
         dispatch(populateProfile(details))
       })
@@ -45,7 +47,8 @@ function App() {
           <MemberRoutes exact path="/game" component={RGame} />
           <MemberRoutes path="/minigame" component={RMiniGame} />
           <MemberRoutes path="/talkshow" component={RTalkShow} />
-          <Route path="/" component={HomePages} />
+          <Route exact path="/" component={HomePages} />
+          <Route path="/exhibition" component={Anim} />
         </Switch>
       </Router>
     </>

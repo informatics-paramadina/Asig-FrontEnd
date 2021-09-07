@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Schedule() {
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto my-16">
             <div className="flex justify-center items-center">
             <div className="mt-10 mr-20">
                 <h2 className="text-2xl text-white">Schedule <br /><span className="text-blue-700 font-semibold">Match</span></h2>

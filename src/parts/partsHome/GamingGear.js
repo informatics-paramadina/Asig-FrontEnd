@@ -6,7 +6,7 @@ export default function Schedule() {
             <div className="flex justify-start w-auto">
                 <h2 className="text-2xl font-semibold text-purple-700 my-10">Gaming Gear</h2>
             </div>
-            <div className="grid grid-rows-3 grid-cols-8 gap-5">
+            <div className="grid grid-rows-3 grid-cols-5 gap-5">
                 <div className="row-span-3 col-span-4">
                     <img src="/images/content/game-gear-1.jpg" className="object-cover" alt="" />
                     <div className="mt-4">

@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import Header from 'parts/Header';
 import YouTube from 'react-youtube';
+import LightSpeed from 'react-reveal/LightSpeed';
 
 export default function Hero() {
 
@@ -11,7 +12,7 @@ export default function Hero() {
     const [timerSecond, setTimerSecond] = useState("00")
 
     const startTimer = () => {
-        const countDownDate = new Date('August 27, 2021 21:49:00').getTime();
+        const countDownDate = new Date('October 1, 2021 0:0:00').getTime();
         Interval.current = setInterval(() => {
             const now = new Date().getTime();
             const distance = countDownDate - now;
@@ -59,7 +60,10 @@ export default function Hero() {
             <div className="inset-0 absolute z-0 w-full h-full bg-black opacity-80"></div>
             <div className="absolute inset-0 object-fill z-0 w-full flex items-center justify-center">
                 <div className="items-center">
+                    <LightSpeed right delay={1000}>
                     <h2 className="text-teal-500 text-6xl animate-bounce font-semibold" style={{textShadow: "2px 2px 7px"}}>Coming Soon ASIG 14</h2>
+                    </LightSpeed>
+                    <LightSpeed left delay={1000}>
                     <div>
                         <div className="stop-watch mt-7">
                             <section>
@@ -83,6 +87,7 @@ export default function Hero() {
                             </section>
                         </div>
                     </div>
+                    </LightSpeed>
                 </div>
             </div>
                 <div className="container mx-auto z-20 relative">

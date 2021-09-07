@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from 'parts/partsHome/Hero';
-import GamingGear from 'parts/partsHome/GamingGear';
 import Sponsor from 'parts/partsHome/Sponsor';
 import Striming from 'parts/partsHome/Striming';
 import Schedule from 'parts/partsHome/Schedule';
@@ -11,12 +10,12 @@ export default function HomePages() {
     return (
         <>
         <Hero />
-        <div className="bg-gray-900">
+        <div className="bg-purple-900">
             <Sponsor />
-            <GamingGear />
-            <Striming />
+            {/* <GamingGear /> */}
             <Schedule />
-            <div className="py-12 bg-gray-800 mt-24">
+            <Striming />
+            <div className="py-12 bg-purple-800 mt-24">
                 <Footer />
             </div>
         </div>

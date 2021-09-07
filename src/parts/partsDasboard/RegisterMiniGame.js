@@ -37,13 +37,13 @@ export default function RegisterMiniGame() {
     const Errors = fieldErrors(error)
     return (
         <div className="flex justify-center items-center">
-                <div className="w-full sm:w-3/12">
+                <div className="w-full sm:w-2/6">
                     <form onSubmit={submit}>
                         <Input 
                             name="name_ingame"
                             type="text"
-                            placeholder="Your NameInGmae"
-                            labelName="Name InGame"
+                            placeholder="Your Mini Game"
+                            labelName="Mini Game"
                             onChange={setState}
                             value={name_ingame}
                             error={Errors}
@@ -52,9 +52,9 @@ export default function RegisterMiniGame() {
                             />
                         <button
                             type="submit"
-                            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                            className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                         >
-                            Masuk
+                            Continue
                         </button>
                         <ToastContainer
                         position="top-right"

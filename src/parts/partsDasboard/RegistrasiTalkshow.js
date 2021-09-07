@@ -40,58 +40,58 @@ export default function RegistrasiTalkshow() {
 
     return (
         <div className="flex justify-center items-center pb-24">
-            <div className="w-full sm:w-3/12">
+            <div className="w-full sm:w-2/6">
         <form onSubmit={submit}>
 
-          <Input 
-          name="instansi"
-          type="text"
-          placeholder="Your instansi name"
-          labelName="Instansi"
-          onChange={setState}
-          value={instansi}
-          />
+            <Input 
+            name="instansi"
+            type="text"
+            placeholder="Your instansi name"
+            labelName="Instansi"
+            onChange={setState}
+            value={instansi}
+            />
 
-        <Input 
-          name="pekerjaan"
-          type="text"
-          placeholder="Your pekerjaan name"
-          labelName="pekerjaan"
-          onChange={setState}
-          value={pekerjaan}
-          />
+            <Input 
+            name="pekerjaan"
+            type="text"
+            placeholder="Your pekerjaan name"
+            labelName="pekerjaan"
+            onChange={setState}
+            value={pekerjaan}
+            />
 
-          <Select 
-          name="nim" placeholder="Select Your focus" labelName="Mahasiswa" value={nim} onClick={setState}
-          >
+            <Select 
+            name="nim" placeholder="Select Your focus" labelName="Mahasiswa" value={nim} onClick={setState}
+            >
             <option value="Mahasiswa Luar">
                 Mahasiswa Luar
             </option>
             <option value="Mahasiswa Paramadina">
                 Mahasiswa Paramadina
             </option>
-          </Select>
+            </Select>
 
-          {
-              nim === "Mahasiswa Paramadina" && (
-                  <Input 
-                  value={outherNim}
-                  onChange={setState}
-                  name="outherNim"
-                  placeholder="masukan nim anda"
-                  labelName="Nim"
-                  type="text"
-                  />
-              )
-          }
+            {
+                nim === "Mahasiswa Paramadina" && (
+                    <Input 
+                    value={outherNim}
+                    onChange={setState}
+                    name="outherNim"
+                    placeholder="masukan nim anda"
+                    labelName="Nim"
+                    type="text"
+                    />
+                )
+            }
 
-          <button
-            type="submit"
-            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
-          >
-            Masuk
-          </button>
-          <ToastContainer
+            <button
+                type="submit"
+                className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+            >
+            Continue
+            </button>
+            <ToastContainer
             position="top-right"
             autoClose = {5000}
             hideProgressBar={false}
@@ -103,7 +103,7 @@ export default function RegistrasiTalkshow() {
             pauseOnHover
                 />
         </form>
-      </div>
+        </div>
         </div>
     )
 }

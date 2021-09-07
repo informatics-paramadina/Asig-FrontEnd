@@ -3,7 +3,6 @@ import Input from 'Components/Input';
 import {withRouter} from 'react-router-dom';
 import useForm from 'helpers/hooks/useForm';
 import {toast, ToastContainer} from 'react-toastify';
-import fieldErrors from 'helpers/hooks/fieldErrors';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
 
@@ -27,10 +26,16 @@ function RegisterGamePlayer({history}) {
 
     
     const [userss, setUsers] = useState([members]);
-    
-        const addUser = () => {
-                setUsers([...userss, members])
-            }
+    console.log(userss)
+    const addUser = () => {
+        return setUsers([...userss, members])
+    }
+
+    const removeUser = (index) => {
+        const filteredUsers = [...userss];
+        filteredUsers.splice(index, 1);
+        return setUsers(filteredUsers)
+    }
 
     const onChange = ((e, index) => {
         const updateUsers = userss.map((user, i) => (
@@ -102,7 +107,7 @@ function RegisterGamePlayer({history}) {
     return (
         <>
             <div className="flex justify-center items-center">
-                <div className="w-full sm:w-3/12">
+                <div className="w-full sm:w-2/6">
                     <form onSubmit={submit}>
                         <Input 
                             name="team_name"
@@ -123,7 +128,7 @@ function RegisterGamePlayer({history}) {
                                 placeholder="Name"
                                 labelName="team Name"
                                 onChange={(e) => setImage(e.target.files[0])}
-                                className="bg-gray-300 hover:bg-gray-400 transition-all duration-200 focus:outline-none text-white px-6 py-3 my-3 w-auto"
+                                className="bg-gray-300 hover:bg-gray-400 cursor-pointer transition-all duration-200 focus:outline-none text-white px-6 py-3 my-3 w-auto"
                             />
                         </div>
 
@@ -162,9 +167,9 @@ function RegisterGamePlayer({history}) {
 
                         <button
                             type="submit"
-                            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                            className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                         >
-                            Masuk
+                            Continue
                         </button>
                         <ToastContainer
                         position="top-right"
@@ -180,9 +185,15 @@ function RegisterGamePlayer({history}) {
                     </form>
                         <button
                             onClick={addUser}
-                            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                            className="bg-teal-400  hover:bg-teal-300 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                         >
-                            Add
+                            Tambah peserta <i className="ri-user-add-fill ri-lg"></i>
+                        </button>
+                        <button
+                            onClick={(index) => removeUser(index)}
+                            className="bg-red-400 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-1/2 mx-20"
+                        >
+                            Remove
                         </button>
                 </div>
         </div>
