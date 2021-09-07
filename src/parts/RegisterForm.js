@@ -32,8 +32,12 @@ console.log(name, phone_number, email, password)
 
 
     return (
-        <div className="flex justify-center items-center pb-24">
-            <div className="w-full sm:w-3/12">
+        <div className="flex justify-between">
+          <div className="w-full h-full">
+            <img src="/images/content/Astronauts.png" alt="" />
+        </div>
+        <div className="container mx-auto">
+            <div className="w-full sm:w-4/6 ml-24">
         <form onSubmit={submit}>
 
           <Input 
@@ -74,7 +78,7 @@ console.log(name, phone_number, email, password)
 
           <button
             type="submit"
-            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+            className="bg-red-600 hover:bg-red-700 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-1/2"
           >
             Masuk
           </button>
@@ -90,8 +94,9 @@ console.log(name, phone_number, email, password)
             pauseOnHover
                 />
         </form>
-      </div>
         </div>
+      </div>
+    </div>
     )
 }
 

@@ -6,7 +6,7 @@ export default function errorHandler(error) {
         let message;
         if(error.response) {
             if (error.response.status === 500){
-                message = "hsfhihif"
+                message = "the server encountered an unexpected condition that prevented it from fulfilling the request"
             }
             else message = error.response.data.status;
             

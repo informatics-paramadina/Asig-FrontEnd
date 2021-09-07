@@ -1,55 +1,17 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import Input from 'Components/Input';
-import users from 'Constant/Api/users';
-// import media from 'Constant/Api/media';
-import image2base64 from 'helpers/utils/image2base64';
 import {withRouter} from 'react-router-dom';
 import useForm from 'helpers/hooks/useForm';
 import {toast, ToastContainer} from 'react-toastify';
-import fieldErrors from 'helpers/hooks/fieldErrors';
 import {useSelector} from 'react-redux';
-import axios from 'axios'
+import axios from 'axios';
 
 
 function RegisterGamePlayer({history}) {
-    // const [state, setState] = useState({
-    //     profileImg: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
-    // })
+
     const DETAILS = useSelector((statee) => statee.users)
     console.log(DETAILS)
 
-    // function imageHandler(e) {
-    //     const reader = new FileReader();
-    //     reader.onload = () => {
-    //         if(reader.readyState === 2){
-    //             setState({profileImg: reader.result})
-    //         }
-    //     }
-    //     reader.readAsDataURL(e.target.files[0])
-    // }
-    // const {profileImg} = state
-    // const [{team_name, logo}, setKey, setState] = useForm({
-    //     team_name: "",
-    //     logo: ""
-    // }) 
-    // const addPicture = useRef(null)
-    // function previewImage(e) {
-    //     e.persist();
-    //     image2base64(e.target.files[0])
-    //     .then(image => {
-    //         setKey({
-    //             target: {
-    //                 name: e.target.name,
-    //                 value: image
-    //             }
-    //         })
-    //         // console.log(image)
-    //     })
-    // }
-
-
-    
-    // console.log(previewImage)
     const [error, setError] = useState(null)
     let nameArr = [];
     let phoneArr = [];
@@ -64,10 +26,16 @@ function RegisterGamePlayer({history}) {
 
     
     const [userss, setUsers] = useState([members]);
-    
-        const addUser = () => {
-                setUsers([...userss, members])
-            }
+    console.log(userss)
+    const addUser = () => {
+        return setUsers([...userss, members])
+    }
+
+    const removeUser = (index) => {
+        const filteredUsers = [...userss];
+        filteredUsers.splice(index, 1);
+        return setUsers(filteredUsers)
+    }
 
     const onChange = ((e, index) => {
         const updateUsers = userss.map((user, i) => (
@@ -86,14 +54,10 @@ function RegisterGamePlayer({history}) {
         team_name: ""
     })
 
-        const [image, setImage] = useState()
+    const [image, setImage] = useState()
 
-    console.log(userss)
-
-
-    function submit(ev) {
+    async function submit(ev) {
         ev.preventDefault();
-
         const formData = new FormData();
         formData.append('name', nameArr);
         formData.append('phone_number', phoneArr);
@@ -101,12 +65,26 @@ function RegisterGamePlayer({history}) {
         formData.append('team_name', team_name);
         formData.append('logo', image);
 
-        fetch(`https://api.himti.my.id/register/game`,{
-            body:formData,
-            method: "POST",
-        } 
-            
-        )
+        const check = JSON.parse(localStorage.getItem("ASIG:token"))
+        // fetch(`https://api.himti.my.id/register/game`,{
+        //     headers: {
+        //         'Authorization': `Bearer ${check.token}`
+        //     },
+        //     body: formData,
+        //     method: "POST",
+        //     // mode: "no-cors"
+        //     //mode: "cors"
+        // }
+        // )
+        await axios({
+            method: 'POST',
+            url: `${process.env.REACT_APP_API_HOST}/register/game`,
+            data: formData,
+            headers: {
+                'Authorization': `Bearer ${check.token}`
+            },
+        })
+        
             .then((res) => {
             if(res){
                 toast.success("Registrasi Success", {
@@ -119,93 +97,41 @@ function RegisterGamePlayer({history}) {
                     progress: undefined,
                 })
             }
-            // setState({
-            //     ...state
-            // })
         })
         .catch((err) => {
             setError(err?.response?.data?.status)
         })
 
-
-        
-        // const payload = {
-        //     team_name: team_name,
-        //     logo: logo
-        // }
-        
-        // if(logo.indexOf("base64") > -1){
-        //     const avatar = await media.upload(logo);
-        //     payload.logo = avatar?.data?.image
-        //     console.log(avatar?.data?.image)
-        // }
-
-        // console.log(payload)
-        // users.registerPlayerGame({
-        //     // name: nameArr,
-        //     // phone_number: phoneArr,
-        //     // name_ingame: ingameArr,
-        // })
-        // .then((res) => {
-        //     if(res){
-        //         toast.success("Registrasi Success", {
-        //             position: "top-right",
-        //             autoClose: 5000,
-        //             hideProgressBar: false,
-        //             closeOnClick: true,
-        //             pauseOnHover: true,
-        //             draggable: true,
-        //             progress: undefined,
-        //         })
-        //     }
-        //     // setState({
-        //     //     ...state
-        //     // })
-        // })
-        // .catch((err) => {
-        //     setError(err?.response?.data?.status)
-        // })
     }
-    const Errors = fieldErrors(error)
+    // const Errors = fieldErrors(error)
     return (
         <>
             <div className="flex justify-center items-center">
-                <div className="w-full sm:w-3/12">
-                    {/* <div className="rounded-full overflow-hidden w-28 h-28">
-                        {
-                            logo ? (
-                                <img src={logo} alt="" />
-                            ) : (
-                                <img src="/images/content/default-avatar.svg" alt="DefaultAvater" className="object-cover w-24 h-24 fill-indigo-500" />
-                            )
-                        }
-
-                    </div>
-                     
-              <button
-                onClick={() => addPicture.current.click()}
-                className="bg-gray-300 hover:bg-gray-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-3"
-              >
-                Browse
-              </button> */}
+                <div className="w-full sm:w-2/6">
                     <form onSubmit={submit}>
                         <Input 
                             name="team_name"
                             type="text"
-                            placeholder="Name"
-                            labelName="team Name"
+                            placeholder="Your Team"
+                            labelName="Team Name"
                             onChange={setState}
                             value={team_name}
-                        />
+                            />
 
-                        <Input 
-                            name="logo"
-                            type="file"
-                            placeholder="Name"
-                            labelName="team Name"
-                            onChange={(e) => setImage(e.target.files[0])}
-                            // value={team_name}
-                        />
+                        <div className="flex flex-col mb-4">
+                            <label htmlFor="logo" className="text-lg mb-2">
+                                Logo Team
+                            </label>
+                            <input 
+                                name="logo"
+                                type="file"
+                                placeholder="Name"
+                                labelName="team Name"
+                                onChange={(e) => setImage(e.target.files[0])}
+                                className="bg-gray-300 hover:bg-gray-400 cursor-pointer transition-all duration-200 focus:outline-none text-white px-6 py-3 my-3 w-auto"
+                            />
+                        </div>
+
                         {
                             userss.map((user, index) => {
                                 return  <div key={index}>
@@ -241,9 +167,9 @@ function RegisterGamePlayer({history}) {
 
                         <button
                             type="submit"
-                            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                            className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                         >
-                            Masuk
+                            Continue
                         </button>
                         <ToastContainer
                         position="top-right"
@@ -259,9 +185,15 @@ function RegisterGamePlayer({history}) {
                     </form>
                         <button
                             onClick={addUser}
-                            className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                            className="bg-teal-400  hover:bg-teal-300 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                         >
-                            Add
+                            Tambah peserta <i className="ri-user-add-fill ri-lg"></i>
+                        </button>
+                        <button
+                            onClick={(index) => removeUser(index)}
+                            className="bg-red-400 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-1/2 mx-20"
+                        >
+                            Remove
                         </button>
                 </div>
         </div>

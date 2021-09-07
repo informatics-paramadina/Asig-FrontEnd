@@ -8,7 +8,7 @@ export default function Register() {
         <section className="container mx-auto pt-10">
             <Header onLight />
         </section>
-            <section className="container mx-auto pt-10">
+            <section className="pt-24">
                 <RegisterForm />
             </section>
         </>

@@ -30,7 +30,7 @@ export default function Select({labelName, name, value, className, children, onC
                 {labelName}
             </label>
             <div className="relative" ref={selectWrapper} onClick={toggleSelect}>
-                <div className={["flex justify-center cursor-pointer bg-white focus:outline-none transition-all duration-200 border px-4 py-3 w-full",
+                <div className={["flex justify-between cursor-pointer bg-white focus:outline-none transition-all duration-200 border px-4 py-3 w-full",
                 toggle ? "border-teal-500" : "border-gray-600"].join(" ")}>
                     <span className={["text-black", placeholder ? "text-gray-400" : ""].join(" ")}>
                         {!selected?.props.children ? placeholder : selected?.props.children}
