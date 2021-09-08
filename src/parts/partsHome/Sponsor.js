@@ -18,8 +18,8 @@ export default function Sponsor() {
     return (
         <section className="">
             <div className="container mx-auto">
-                <div className="flex justify-start">
-                    <h2 className="text-xl font-semibold text-white mt-5"><span className="font-medium text-blue-600">PROUD</span> <br />PARTNERS</h2>
+                <div className="flex md:justify-start justify-center">
+                    <h2 className="text-xl font-semibold text-white my-10"><span className="font-medium text-blue-600">PROUD</span> <br className="hidden md:flex"/>PARTNERS</h2>
                 </div>
             <div >
                 <Slider  

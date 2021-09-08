@@ -9,8 +9,8 @@ import Footer from 'parts/Footer';
 export default function HomePages() {
     return (
         <>
-        <Hero />
         <div className="bg-purple-900">
+        <Hero />
             <Sponsor />
             {/* <GamingGear /> */}
             <Schedule />

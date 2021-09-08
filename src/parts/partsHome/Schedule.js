@@ -7,8 +7,8 @@ export default function Schedule() {
             <div className="mt-10 mr-20">
                 <h2 className="text-2xl text-white">Schedule <br /><span className="text-blue-700 font-semibold">Match</span></h2>
             </div>
-            <div className="mt-10 flex flex-wrap">
-                <div className="grid grid-rows-2 grid-cols-4 gap-5">
+            <div className="mt-10">
+                <div className="grid md:grid-rows-2 grid-rows-1 grid-cols-1 md:grid-cols-4 gap-5">
                     <div className="col-span-2 row-span-2">
                         <div className="wrapper-schedule" style={{width: 400, height: 200}}>
                             <div className="px-3">

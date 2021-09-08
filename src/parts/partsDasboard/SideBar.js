@@ -46,7 +46,7 @@ function SideBar({match, history}) {
     return (
         <>
             <div className="flex sm:hidden">
-                <button onClick={() => setToggleMenu((prev) => !prev)} className={["toggle z-50", toggleMenu ? "active" : ""].join(" ")}></button>
+                <button onClick={() => setToggleMenu((prev) => !prev)} className={["toggle-dash z-50", toggleMenu ? "active" : ""].join(" ")}></button>
             </div>
                 <aside className="transition-all duration-300 bg-purple-900 max-h-screen h-screen overflow-y-auto min-h-full fixed sm:relative z-50" style={sidebarStyle}>
                     {toggleMenu && (
@@ -113,7 +113,7 @@ function SideBar({match, history}) {
                                     ].join(" ")}
                                     to="/game"
                                     >
-                                    Game Player
+                                    Valorant
                                     </Link>
                                 </li>
                                 <li>

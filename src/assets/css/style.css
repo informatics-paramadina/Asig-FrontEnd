@@ -29,7 +29,7 @@
 }
 
 .stop-watch section p {
-  @apply text-5xl;
+  @apply sm:text-5xl text-2xl;
 }
 
 .slick-arrow {
@@ -83,12 +83,62 @@ aside .overlay {
   @apply transition-all duration-500;
 }
 
-.toggle {
+.toggle-dash {
   position: absolute;
   width: 20px;
   height: 20px;
   left: 30px;
   top: 45px;
+}
+
+.toggle-dash:focus {
+  outline: none;
+}
+
+.toggle-dash::before,
+.toggle-dash::after {
+  right: 0;
+  position: absolute;
+  --bg-opacity: 1;
+  background-color: #132b50;
+  background-color: rgba(19, 43, 80, var(--bg-opacity));
+  transition-property: all;
+  transition-duration: 200ms;
+  content: "";
+  height: 3px;
+  transform-origin: center;
+}
+
+.toggle-dash::before {
+  top: 26%;
+  width: 20px;
+}
+
+.toggle-dash::after {
+  top: 58%;
+  width: 12px;
+}
+
+.toggle-dash.active::before,
+.toggle-dash.active::after {
+  width: 20px;
+  top: 50%;
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+}
+
+.toggle-dash.active::before {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.toggle-dash.active::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.toggle {
+  @apply relative w-5 h-5;
+  z-index: 9999;
 }
 
 .toggle:focus {
@@ -97,13 +147,7 @@ aside .overlay {
 
 .toggle::before,
 .toggle::after {
-  right: 0;
-  position: absolute;
-  --bg-opacity: 1;
-  background-color: #132b50;
-  background-color: rgba(19, 43, 80, var(--bg-opacity));
-  transition-property: all;
-  transition-duration: 200ms;
+  @apply right-0 absolute bg-gray-300 transition-all duration-200;
   content: "";
   height: 3px;
   transform-origin: center;
@@ -121,18 +165,16 @@ aside .overlay {
 
 .toggle.active::before,
 .toggle.active::after {
+  content: "";
   width: 20px;
   top: 50%;
-  --bg-opacity: 1;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
 .toggle.active::before {
   transform: translateY(-50%) rotate(-45deg);
 }
 
-.toggle.active::after {
+.toggle.toggle.active:after {
   transform: translateY(-50%) rotate(45deg);
 }
 

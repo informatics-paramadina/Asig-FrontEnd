@@ -85,7 +85,7 @@ function LoginForm({history}) {
       </div>
         
         <div className="w-full h-full relative">
-          <img className="object-cover object-center" style={{height: 657}} src="/images/content/Valorant.png" alt="" />
+          <img className="object-cover object-center h-screen" src="/images/content/Valorant.png" alt="" />
         </div>
         </div>
     )
