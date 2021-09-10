@@ -44,11 +44,11 @@ export default function Hero() {
         <section className="pt-10 px-4 md:px-0 relative overflow-hidden" style={{height: 660}}>
             <div className="video-wrapper min-h-screen md:min-h-full">
                 <YouTube 
-                    videoId="f4eyqHP-kTw" id="f4eyqHP-kTw"
+                    videoId="AOqsO03mOEs" id="AOqsO03mOEs"
                     opts = {{
                         playerVars: {
                             loop: 1,
-                            mute: 1,
+                            mute: 0,
                             autoplay: 1,
                             controls: 0,
                             showinfo: 0,
