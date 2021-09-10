@@ -8,18 +8,19 @@ import Select from 'Components/Select';
 export default function RegistrasiTalkshow() {
     const [error, setError] = useState(null)
 
-    const [{instansi, pekerjaan, nim, outherNim}, setState] = useForm({
+    const [{instansi, pekerjaan, outherPekerjaan, nim, outherNim}, setState] = useForm({
         instansi: "",
         pekerjaan: "",
+        outherPekerjaan: "",
         nim: "",
         outherNim: ""
     })
 
-    console.log(instansi, pekerjaan, nim, outherNim)
+    console.log(instansi, pekerjaan, outherPekerjaan, nim, outherNim)
 
     function submit(ev) {
         ev.preventDefault()
-        users.registerTalkShow({instansi, pekerjaan, nim: nim === "Mahasiswa Paramadina" ? outherNim : nim})
+        users.registerTalkShow({instansi, pekerjaan: pekerjaan === "Mahasiswa" ? outherPekerjaan : pekerjaan,  nim: nim === "Mahasiswa Paramadina" ? outherNim : nim})
         .then((res) => {
             if(res){
                 toast.success("Registrasi Success", {
@@ -52,25 +53,48 @@ export default function RegistrasiTalkshow() {
             value={instansi}
             />
 
-            <Input 
+            {/* <Input 
             name="pekerjaan"
             type="text"
             placeholder="Your pekerjaan name"
             labelName="pekerjaan"
             onChange={setState}
             value={pekerjaan}
-            />
+            /> */}
 
             <Select 
-            name="nim" placeholder="Select Your focus" labelName="Mahasiswa" value={nim} onClick={setState}
+                name="pekerjaan" labelName="Pekerjaan" value={pekerjaan} onClick={setState}
             >
-            <option value="Mahasiswa Luar">
-                Mahasiswa Luar
-            </option>
-            <option value="Mahasiswa Paramadina">
-                Mahasiswa Paramadina
-            </option>
+                <option value="Pegawai Negeri Sipil">
+                    Pegawai Negeri Sipil
+                </option>
+                <option value="Karyawan Swasta">
+                    Karyawan Swasta
+                </option>
+                <option value="Dosen">
+                    Dosen
+                </option>
+                <option value="Mahasiswa">
+                    Mahasiswa
+                </option>
+                <option value="Pelajar">
+                    Pelajar
+                </option>
             </Select>
+            {
+                pekerjaan === "Mahasiswa" && (
+                    <Select 
+                        name="nim" labelName="Mahasiswa" value={nim} onClick={setState}
+                        >
+                        <option value="Mahasiswa Luar">
+                            Mahasiswa Luar
+                        </option>
+                        <option value="Mahasiswa Paramadina">
+                            Mahasiswa Paramadina
+                        </option>
+                    </Select>
+                )
+            }
 
             {
                 nim === "Mahasiswa Paramadina" && (
@@ -81,6 +105,7 @@ export default function RegistrasiTalkshow() {
                     placeholder="masukan nim anda"
                     labelName="Nim"
                     type="text"
+                    error={error}
                     />
                 )
             }

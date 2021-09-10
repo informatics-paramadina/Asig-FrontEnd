@@ -9,7 +9,8 @@ export default function Input({
     labelName,
     error,
     onBlur,
-    onFocus
+    onFocus,
+    className
 }) {
     return (
             <div className="flex flex-col mb-4">
@@ -27,7 +28,7 @@ export default function Input({
                 className={["input bg-white", 
                         error ?
                         "border-red-500 text-red-500" : 
-                        "focus:border-teal-500 border-gray-600 text-gray-600"
+                        "focus:border-teal-500 border-gray-600 text-gray-600", className
                     ].join(" ")}
                 value={value}
                 placeholder={placeholder}

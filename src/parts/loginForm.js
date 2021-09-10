@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import users from 'Constant/Api/users';
 import {withRouter} from 'react-router-dom';
 import useForm from 'helpers/hooks/useForm';
 import { setAuthorizationHeader } from 'config/axios';
 import {useDispatch} from 'react-redux'
 import { populateProfile } from 'Store/action/users';
+import {toast, ToastContainer} from 'react-toastify';
 
 
 function LoginForm({history}) {
+    const [error, setError] = useState(null)
     const dispatch = useDispatch();
     const [{email, password}, setState] = useForm({
         email: "",
@@ -19,6 +21,17 @@ function LoginForm({history}) {
 
         users.login({email, password}).then((res) => {
             setAuthorizationHeader(res.token);
+            if(res) {
+              toast.success("Login Success", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+              })
+            }
             users.details().then(detail => {
               dispatch(populateProfile(detail))
               localStorage.setItem("ASIG:token", JSON.stringify({
@@ -38,7 +51,7 @@ function LoginForm({history}) {
               history.push(redirect || "/dasboard")
             })
           }).catch((err) => {
-            console.log(err)
+            setError(err?.response?.status)
           })
         }
         
@@ -58,8 +71,9 @@ function LoginForm({history}) {
             labelName="Email Address"
             onChange={setState}
             value={email}
-            className="input bg-gray-800 focus:border-teal-500 border-gray-800 text-gray-500 placeholder-gray-700 w-full"
+            className={["input bg-gray-800 placeholder-gray-700 w-full", error ? "border-red-500 text-red-500" : "focus:border-teal-500 border-gray-800 text-gray-500"].join(" ")}
             />
+            {/* <span className="text-red-500 text-sm pt-3">{error}</span> */}
         </div>
         <div className="flex flex-col mb-10">
           <label htmlFor="password" className="text-lg mb-2 text-white">
@@ -72,8 +86,9 @@ function LoginForm({history}) {
           labelName="Password"
           onChange={setState}
           value={password}
-          className="input bg-gray-800 focus:border-teal-500 border-gray-800 text-gray-500 placeholder-gray-700 w-full"
+          className={["input bg-gray-800 placeholder-gray-700 w-full", error ? "border-red-500 text-red-500" : "focus:border-teal-500 border-gray-800 text-gray-500"].join(" ")}
           />
+          {/* <span className="text-red-500 text-sm pt-3">{error}</span> */}
         </div>
           <button
             type="submit"
@@ -81,9 +96,20 @@ function LoginForm({history}) {
           >
             Masuk
           </button>
+          <ToastContainer
+            position="top-right"
+            autoClose = {5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </form>
       </div>
-        
+
         <div className="w-full h-full relative">
           <img className="object-cover object-center h-screen" src="/images/content/Valorant.png" alt="" />
         </div>

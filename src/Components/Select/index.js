@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect, Children} from 'react';
 
 
-export default function Select({labelName, name, value, className, children, onClick, placeholder}){ 
+export default function Select({labelName, name, value, children, onClick, placeholder}){ 
     const [toggle, setToggle] = useState(false);
     const selectWrapper = useRef(false);
     const items = Children.toArray(children)

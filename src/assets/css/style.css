@@ -10,6 +10,28 @@
   height: 0;
 }
 
+.link-wrapped::before {
+  content: "";
+  @apply cursor-pointer z-10 inset-0 absolute;
+}
+
+ul.breadcrumb {
+  @apply flex flex-row items-center text-lg text-white;
+}
+
+ul.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  @apply px-4;
+}
+
+ul.breadcrumb li:not(:last-child) a {
+  @apply font-light;
+}
+
+ul.breadcrumb li:last-child a {
+  @apply font-semibold;
+}
+
 .main-nav-active {
   color: #805ad5;
 }
@@ -202,4 +224,36 @@ aside .overlay {
 .paginationActive a {
   color: white;
   background-color: #20b2aa;
+}
+
+.item figure.item-image {
+  position: relative;
+  perspective: 10000px;
+}
+
+.item figure.item-image::before {
+  content: "";
+  @apply absolute inset-0 bg-purple-700 opacity-0 transition-all duration-300;
+}
+
+.item:hover figure.item-image::before {
+  @apply opacity-75 rounded-xl;
+}
+
+.item figure.item-image svg.icon-games {
+  @apply transition-all duration-300 fill-teal-500;
+  content: "";
+  position: absolute;
+  width: 58px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  opacity: 0;
+  transform: translatex(-50%) translateY(-50%) rotate(-45deg);
+}
+
+.item:hover figure.item-image svg.icon-games {
+  opacity: 7;
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
 }

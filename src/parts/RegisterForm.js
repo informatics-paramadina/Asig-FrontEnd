@@ -5,9 +5,12 @@ import useForm from 'helpers/hooks/useForm';
 import InputPhone from 'Components/InputPhone';
 import Input from 'Components/Input';
 import {ToastContainer} from 'react-toastify';
+import ShowIcon from '@material-ui/icons/Visibility';
+import ShowOffIcon from '@material-ui/icons/VisibilityOff';
 
 function RegisterForm({history}) {
 const [phone_number, setPhone] = useState()
+const [showPassword, setShowPassword] = useState(false)
 const [error, setError] = useState(null)
 const [{name, email, password}, setState] = useForm({
     name: "",
@@ -47,6 +50,7 @@ console.log(name, phone_number, email, password)
           labelName="Full Name"
           onChange={setState}
           value={name}
+          error={error}
           />
 
             <InputPhone
@@ -67,14 +71,24 @@ console.log(name, phone_number, email, password)
           error={error}
           />
 
+          <div className="relative">
           <Input 
           name="password"
-          type="password"
+          type={showPassword ? "text" : "password"}
           placeholder="Your password address"
           labelName="Password"
           onChange={setState}
           value={password}
+          error={error}
+          // className="relative"
           />
+          <div className="absolute bottom-12 right-8">
+            <span className="cursor-pointer absolute" onClick={() => setShowPassword((prev) => !prev)}>
+              {showPassword ? <ShowIcon /> : <ShowOffIcon />}
+            </span>
+          </div>
+          </div>
+
 
           <button
             type="submit"

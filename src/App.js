@@ -18,6 +18,8 @@ import RGame from 'pages/RGame';
 import RMiniGame from 'pages/RMiniGame';
 import RTalkShow from 'pages/RTalkShow';
 import Anim from 'pages/Anim';
+import AllGames from 'pages/Games/AllGames';
+
 
 function App() {
   const dispatch = useDispatch()
@@ -49,6 +51,7 @@ function App() {
           <MemberRoutes path="/talkshow" component={RTalkShow} />
           <Route exact path="/" component={HomePages} />
           <Route path="/exhibition" component={Anim} />
+          <Route path="/games/:nama_project/:id" component={AllGames} />
         </Switch>
       </Router>
     </>

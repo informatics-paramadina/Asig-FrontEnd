@@ -103,7 +103,8 @@ function RegisterGamePlayer({history}) {
         })
 
     }
-    // const Errors = fieldErrors(error)
+
+
     return (
         <>
             <div className="flex justify-center items-center">
@@ -116,6 +117,7 @@ function RegisterGamePlayer({history}) {
                             labelName="Team Name"
                             onChange={setState}
                             value={team_name}
+                            error={error}
                             />
 
                         <div className="flex flex-col mb-4">
@@ -142,6 +144,7 @@ function RegisterGamePlayer({history}) {
                                     labelName="Full Name"
                                     onChange={(e) => onChange(e, index)}
                                     value={user.name}
+                                    error={error}
                                     />
                                 <Input 
                                 name="phone_number"
@@ -150,6 +153,7 @@ function RegisterGamePlayer({history}) {
                                 labelName="Phone Number"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.phone_number}
+                                error={error}
                                 />
 
                                 <Input 
@@ -159,6 +163,7 @@ function RegisterGamePlayer({history}) {
                                 labelName="In Game"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.name_ingame}
+                                error={error}
                                 />
 
                                 </div>
