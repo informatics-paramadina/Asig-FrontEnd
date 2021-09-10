@@ -22,7 +22,12 @@ import AllGames from 'pages/Games/AllGames';
 
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const loader = document.querySelector(".loader");
+
+  useEffect(() => {
+    loader.classList.add("loader--hide");
+  }, []);
 
   useEffect(() => {
     let session = null;
@@ -31,14 +36,14 @@ function App() {
       setAuthorizationHeader(session.token);
 
       users.details().then((details) => {
-        dispatch(populateProfile(details))
-      })
+        dispatch(populateProfile(details));
+      });
     }
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <>
-      <Router> 
+      <Router>
         <Switch>
           <GuestRoutes path="/login" component={Login} />
           <GuestRoutes path="/register" component={Register} />
