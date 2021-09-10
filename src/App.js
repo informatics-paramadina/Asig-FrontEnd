@@ -1,23 +1,25 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import "assets/css/style.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePages from "pages/Home";
-import GuestRoutes from "Components/Routes/GuestRoutes";
-import Login from "pages/login";
-import MyDasboard from "pages/Dasboard";
-import MemberRoutes from "Components/Routes/MemberRoutes";
-import Register from "pages/register";
-import Unauthenticated from "pages/401";
-import { setAuthorizationHeader } from "config/axios";
-import users from "Constant/Api/users";
-import { populateProfile } from "Store/action/users";
-import Shcedule from "parts/partsDasboard/Shcedule";
-import Sertifikat from "parts/partsDasboard/Sertifikat";
-import RGame from "pages/RGame";
-import RMiniGame from "pages/RMiniGame";
-import RTalkShow from "pages/RTalkShow";
-import Anim from "pages/Anim";
+import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import 'assets/css/style.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomePages from 'pages/Home';
+import GuestRoutes from 'Components/Routes/GuestRoutes';
+import Login from 'pages/login';
+import MyDasboard from 'pages/Dasboard';
+import MemberRoutes from 'Components/Routes/MemberRoutes';
+import Register from 'pages/register';
+import Unauthenticated from 'pages/401';
+import {setAuthorizationHeader} from 'config/axios';
+import users from 'Constant/Api/users';
+import {populateProfile} from 'Store/action/users';
+import Shcedule from 'parts/partsDasboard/Shcedule';
+import Sertifikat from 'parts/partsDasboard/Sertifikat';
+import RGame from 'pages/RGame';
+import RMiniGame from 'pages/RMiniGame';
+import RTalkShow from 'pages/RTalkShow';
+import Anim from 'pages/Anim';
+import AllGames from 'pages/Games/AllGames';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -54,6 +56,7 @@ function App() {
           <MemberRoutes path="/talkshow" component={RTalkShow} />
           <Route exact path="/" component={HomePages} />
           <Route path="/exhibition" component={Anim} />
+          <Route path="/games/:nama_project/:id" component={AllGames} />
         </Switch>
       </Router>
     </>

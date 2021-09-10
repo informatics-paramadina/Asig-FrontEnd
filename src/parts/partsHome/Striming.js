@@ -12,18 +12,18 @@ export default function Striming() {
             <img src="images/content/streming-mobile.png" className="object-cover object-center md:hidden" alt="" />
                 <div className="inset-0 absolute z-0 w-full h-full bg-black opacity-60"></div>
                 <Fade left>
-                    <h2 className="text-white font-semibold md:text-3xl text-2xl absolute inset-0 flex justify-center mt-10 w-full">
+                    <h2 className="text-white font-semibold md:text-3xl text-2xl absolute inset-0 flex justify-center md:mt-10 mt-5 w-full">
                         Live Stream Match
                     </h2>
                 </Fade>
                     <div className="streming absolute inset-0 md:flex justify-center items-center hidden">
                         <Zoom delay={1000}>
                         <Livestream 
-                        videoId="nomJocKOcuI" id="nomJocKOcuI"
+                        videoId="M99DShgu664" id="M99DShgu664"
                         opts={{
                             playerVars: {
                                 loop: 0,
-                                mute: 1,
+                                mute: 0,
                                 autoplay: 1,
                                 controls: 0,
                                 showinfo: 0,
@@ -33,16 +33,16 @@ export default function Striming() {
                     </Zoom>
             </div>
 
-            <div className="streming absolute inset-0 flex justify-center items-center md:hidden mt-10">
+            <div className="streming absolute inset-0 flex justify-center items-center md:hidden mt-12">
                         <Zoom delay={1000}>
                         <Livestream 
-                        videoId="nomJocKOcuI" id="nomJocKOcuI"
+                        videoId="M99DShgu664" id="M99DShgu664"
                         opts={{
                             height: '200',
                             width: '350',
                             playerVars: {
                                 loop: 0,
-                                mute: 1,
+                                mute: 0,
                                 autoplay: 1,
                                 controls: 0,
                                 showinfo: 0,

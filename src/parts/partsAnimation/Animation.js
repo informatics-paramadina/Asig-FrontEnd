@@ -62,7 +62,7 @@ export default function Animation() {
     
     return (
         <div className="mt-28">
-            <div className="container mx-auto w-4/5">
+            <div className="container mx-auto w-4/5 h-screen">
                     {displayUsers}
                 <div className="my-20">
                     <Fade left delay={1000}>

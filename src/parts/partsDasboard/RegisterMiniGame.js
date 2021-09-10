@@ -3,7 +3,6 @@ import useForm from 'helpers/hooks/useForm';
 import Input from 'Components/Input';
 import users from 'Constant/Api/users';
 import {toast, ToastContainer} from 'react-toastify';
-import fieldErrors from 'helpers/hooks/fieldErrors';
 
 export default function RegisterMiniGame() {
     const [{name_ingame}, setState] = useForm({
@@ -34,7 +33,7 @@ export default function RegisterMiniGame() {
             console.log(err.response)
         })
     }
-    const Errors = fieldErrors(error)
+
     return (
         <div className="flex justify-center items-center">
                 <div className="w-full sm:w-2/6">
@@ -46,7 +45,7 @@ export default function RegisterMiniGame() {
                             labelName="Mini Game"
                             onChange={setState}
                             value={name_ingame}
-                            error={Errors}
+                            error={error}
                             onBlur={() => setFocus(!focus)}
                             onFocus={() => setFocus(!focus)}
                             />
