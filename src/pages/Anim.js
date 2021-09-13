@@ -9,8 +9,9 @@ export default function Anim() {
             <div className="container mx-auto">
                 <Header  />
             </div>
-            <div></div>
-            <Animation />
+            <div className="pb-16">
+                <Animation />
+            </div>
             <div className="py-12 bg-purple-800 mt-24">
                 <Footer />
             </div>

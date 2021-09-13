@@ -48,7 +48,7 @@ export default function Hero() {
                     opts = {{
                         playerVars: {
                             loop: 1,
-                            mute: 0,
+                            mute: 1,
                             autoplay: 1,
                             controls: 0,
                             showinfo: 0,
@@ -57,7 +57,7 @@ export default function Hero() {
                     onEnd={(ev) => {ev.target.playVideo()}}
                 />
             </div>
-            <div className="inset-0 absolute z-0 w-full h-full bg-black opacity-80"></div>
+            <div className="inset-0 absolute z-0 w-full h-full bg-black opacity-70"></div>
             <div className="absolute inset-0 z-0 w-full object-fill flex items-center justify-center">
                 <div className="items-center">
                     <LightSpeed right delay={1000}>
