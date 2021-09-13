@@ -8,19 +8,23 @@ import Select from 'Components/Select';
 export default function RegistrasiTalkshow() {
     const [error, setError] = useState(null)
 
-    const [{instansi, pekerjaan, outherPekerjaan, nim, outherNim}, setState] = useForm({
+    const [{instansi, pekerjaan, nim, outherNim}, setState] = useForm({
         instansi: "",
         pekerjaan: "",
-        outherPekerjaan: "",
+        // outherPekerjaan: "",
         nim: "",
         outherNim: ""
     })
 
-    console.log(instansi, pekerjaan, outherPekerjaan, nim, outherNim)
+    console.log("instansi:",instansi, "pekerjaan:", pekerjaan, "outherPekerjaan:", "nim:", nim, "outherNim:",outherNim)
 
     function submit(ev) {
         ev.preventDefault()
-        users.registerTalkShow({instansi, pekerjaan: pekerjaan === "Mahasiswa" ? outherPekerjaan : pekerjaan,  nim: nim === "Mahasiswa Paramadina" ? outherNim : nim})
+        users.registerTalkShow({
+            instansi, 
+            pekerjaan: pekerjaan === "Mahasiswa" ? pekerjaan : "",  
+            nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
+        })
         .then((res) => {
             if(res){
                 toast.success("Registrasi Success", {
@@ -105,7 +109,6 @@ export default function RegistrasiTalkshow() {
                     placeholder="masukan nim anda"
                     labelName="Nim"
                     type="text"
-                    error={error}
                     />
                 )
             }

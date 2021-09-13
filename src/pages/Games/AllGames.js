@@ -3,7 +3,7 @@ import BreadCrumb from 'Components/BreadCrumb';
 import Header from 'parts/Header';
 import Curut from 'parts/partsAnimation/CategoryGm/filterGame';
 import { useParams } from 'react-router';
-
+import Footer from 'parts/Footer';
 
 
 export default function AllGames() {
@@ -18,6 +18,9 @@ export default function AllGames() {
                 {url: `/games/${nama_project}/${id}`, name: "Category"}
             ]} />
             <Curut />
+            <div className="py-12 bg-purple-800 mt-24">
+                <Footer />
+            </div>
         </section>
     )
 }
