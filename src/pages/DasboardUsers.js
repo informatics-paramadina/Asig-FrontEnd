@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBar from 'parts/partsDasboard/SideBar';
+import SideBar from 'parts/partsDasboard/SideBarUser';
 
 export default function MyDasboard() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import RegisterGamePlayer from 'parts/partsDasboard/RegisterGamePlayer';
-import SideBar from 'parts/partsDasboard/SideBar';
+import SideBar from 'parts/partsDasboard/SideBarUser';
 
 export default function RGame() {
     return (

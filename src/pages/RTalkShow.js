@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBar from 'parts/partsDasboard/SideBar';
+import SideBar from 'parts/partsDasboard/SideBarUser';
 import RegistrasiTalkshow from 'parts/partsDasboard/RegistrasiTalkshow';
 export default function RTalkShow() {
     return (

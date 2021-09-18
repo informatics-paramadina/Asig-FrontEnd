@@ -4,11 +4,15 @@ import Input from 'Components/Input';
 import users from 'Constant/Api/users';
 import {toast, ToastContainer} from 'react-toastify';
 import Select from 'Components/Select';
+import { withRouter } from 'react-router';
 
-export default function RegistrasiTalkshow() {
+function RegistrasiTalkshow({history}) {
     const [error, setError] = useState(null)
 
-    const [{instansi, pekerjaan, nim, outherNim}, setState] = useForm({
+    const [{email, phone_number, name, instansi, pekerjaan, nim, outherNim}, setState] = useForm({
+        email: "",
+        phone_number: "",
+        name: "",
         instansi: "",
         pekerjaan: "",
         // outherPekerjaan: "",
@@ -21,11 +25,15 @@ export default function RegistrasiTalkshow() {
     function submit(ev) {
         ev.preventDefault()
         users.registerTalkShow({
+            email,
+            phone_number,
+            name,
             instansi, 
             pekerjaan: pekerjaan === "Mahasiswa" ? pekerjaan : "",  
             nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
         })
         .then((res) => {
+            history.push('/')
             if(res){
                 toast.success("Registrasi Success", {
                     position: "top-right",
@@ -45,8 +53,36 @@ export default function RegistrasiTalkshow() {
 
     return (
         <div className="flex justify-center items-center pb-24">
-            <div className="w-full sm:w-2/6">
+            {/* sm:w-2/6 */}
+            <div className="w-full">
         <form onSubmit={submit}>
+
+            <Input 
+            name="email"
+            type="email"
+            placeholder="Your Email Address"
+            labelName="Email"
+            onChange={setState}
+            value={email}
+            />
+
+            <Input 
+            name="phone_number"
+            type="text"
+            placeholder="Your instansi name"
+            labelName="Phone Number"
+            onChange={setState}
+            value={phone_number}
+            />
+
+            <Input 
+            name="name"
+            type="text"
+            placeholder="Your name"
+            labelName="Name"
+            onChange={setState}
+            value={name}
+            />
 
             <Input 
             name="instansi"
@@ -56,15 +92,6 @@ export default function RegistrasiTalkshow() {
             onChange={setState}
             value={instansi}
             />
-
-            {/* <Input 
-            name="pekerjaan"
-            type="text"
-            placeholder="Your pekerjaan name"
-            labelName="pekerjaan"
-            onChange={setState}
-            value={pekerjaan}
-            /> */}
 
             <Select 
                 name="pekerjaan" labelName="Pekerjaan" value={pekerjaan} onClick={setState}
@@ -135,3 +162,5 @@ export default function RegistrasiTalkshow() {
         </div>
     )
 }
+
+export default withRouter(RegistrasiTalkshow)

@@ -3,20 +3,20 @@ import Input from 'Components/Input';
 import {withRouter} from 'react-router-dom';
 import useForm from 'helpers/hooks/useForm';
 import {toast, ToastContainer} from 'react-toastify';
-import {useSelector} from 'react-redux';
 import axios from 'axios';
 
 
 function RegisterGamePlayer({history}) {
 
-    const DETAILS = useSelector((statee) => statee.users)
-    console.log(DETAILS)
-
     const [error, setError] = useState(null)
-    let nameArr = [];
-    let phoneArr = [];
-    let ingameArr =  [];
-
+    const [{team_name, leader_email, leader_phone_number, leader_name, leader_name_ingame}, setState] = useForm({
+        team_name: "",
+        leader_email: "",
+        leader_phone_number: "",
+        leader_name: "",
+        leader_name_ingame: "",
+        
+    })
 
     let members = {
         name: "",
@@ -24,19 +24,15 @@ function RegisterGamePlayer({history}) {
         name_ingame: "",
     }
 
-    
     const [userss, setUsers] = useState([members]);
-    console.log(userss)
     const addUser = () => {
         return setUsers([...userss, members])
     }
-
     const removeUser = (index) => {
         const filteredUsers = [...userss];
         filteredUsers.splice(index, 1);
         return setUsers(filteredUsers)
     }
-
     const onChange = ((e, index) => {
         const updateUsers = userss.map((user, i) => (
             index === i ? Object.assign(user, {[e.target.name]: e.target.value}) : user
@@ -44,18 +40,18 @@ function RegisterGamePlayer({history}) {
         return setUsers(updateUsers);
     })  
 
+    
+    let nameArr = [];
+    let phoneArr = [];
+    let ingameArr =  [];
+    
     for (let i = 0; i < userss.length; i++) {
         nameArr.push(userss[i].name);
         phoneArr.push(userss[i].phone_number);
         ingameArr.push(userss[i].name_ingame);
     }
-
-    const [{team_name}, setState] = useForm({
-        team_name: ""
-    })
-
+    
     const [image, setImage] = useState()
-
     async function submit(ev) {
         ev.preventDefault();
         const formData = new FormData();
@@ -63,29 +59,25 @@ function RegisterGamePlayer({history}) {
         formData.append('phone_number', phoneArr);
         formData.append('name_ingame', ingameArr);
         formData.append('team_name', team_name);
+        formData.append('leader_email', leader_email);
+        formData.append('leader_phone_number', leader_phone_number);
+        formData.append('leader_name', leader_name);
+        formData.append('leader_name_ingame', leader_name_ingame);
         formData.append('logo', image);
 
-        const check = JSON.parse(localStorage.getItem("ASIG:token"))
-        // fetch(`https://api.himti.my.id/register/game`,{
-        //     headers: {
-        //         'Authorization': `Bearer ${check.token}`
-        //     },
-        //     body: formData,
-        //     method: "POST",
-        //     // mode: "no-cors"
-        //     //mode: "cors"
-        // }
-        // )
+        // const check = JSON.parse(localStorage.getItem("ASIG:token"))
+
         await axios({
             method: 'POST',
-            url: `${process.env.REACT_APP_API_HOST}/register/game`,
+            url: `${process.env.REACT_APP_API_HOST}/daftar/game`,
             data: formData,
-            headers: {
-                'Authorization': `Bearer ${check.token}`
-            },
+            // headers: {
+            //     'Authorization': `Bearer ${check.token}`
+            // },
         })
         
             .then((res) => {
+            history.push('/')
             if(res){
                 toast.success("Registrasi Success", {
                     position: "top-right",
@@ -101,15 +93,54 @@ function RegisterGamePlayer({history}) {
         .catch((err) => {
             setError(err?.response?.data?.status)
         })
-
     }
 
 
     return (
         <>
             <div className="flex justify-center items-center">
-                <div className="w-full sm:w-2/6">
+                <div className="w-full ">
                     <form onSubmit={submit}>
+                        <Input 
+                            name="leader_email"
+                            type="email"
+                            placeholder="Your Team"
+                            labelName="Email Leader"
+                            onChange={setState}
+                            value={leader_email}
+                            error={error}
+                        />
+
+                        <Input 
+                            name="leader_phone_number"
+                            type="text"
+                            placeholder="Your Team"
+                            labelName="phone number leader"
+                            onChange={setState}
+                            value={leader_phone_number}
+                            error={error}
+                        />
+
+                        <Input 
+                            name="leader_name"
+                            type="text"
+                            placeholder="Your Team"
+                            labelName="nama leader"
+                            onChange={setState}
+                            value={leader_name}
+                            error={error}
+                        />
+
+                        <Input 
+                            name="leader_name_ingame"
+                            type="text"
+                            placeholder="Your Team"
+                            labelName="nama ingame leader"
+                            onChange={setState}
+                            value={leader_name_ingame}
+                            error={error}
+                        />
+
                         <Input 
                             name="team_name"
                             type="text"
@@ -118,7 +149,7 @@ function RegisterGamePlayer({history}) {
                             onChange={setState}
                             value={team_name}
                             error={error}
-                            />
+                        />
 
                         <div className="flex flex-col mb-4">
                             <label htmlFor="logo" className="text-lg mb-2">
@@ -206,4 +237,4 @@ function RegisterGamePlayer({history}) {
     )
 }
 
-export default withRouter(RegisterGamePlayer)
+export default withRouter(RegisterGamePlayer);

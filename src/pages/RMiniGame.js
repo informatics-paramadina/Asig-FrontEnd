@@ -1,6 +1,6 @@
 import React from 'react';
 import RegisterMiniGame from 'parts/partsDasboard/RegisterMiniGame';
-import SideBar from 'parts/partsDasboard/SideBar';
+import SideBar from 'parts/partsDasboard/SideBarUser';
 
 export default function RMiniGame() {
     return (

@@ -1,15 +1,51 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import { NavLink, withRouter, Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import Fade from 'react-reveal/Fade';
+import DropDown from './DropDown';
 
 
 function Header({onLight, location}) {
     const [ToggleMenu, setToggleMenu] = useState(false)
+    const [dropdown, setDropdown] = useState(false)
+    const WrapperDropdown = useRef(false)
     const LinkColor = onLight ? "text-gray-900" : "text-white";
     const linkCTA = location.pathname.indexOf("/login") > -1 ? `/register` : `/login`;
     const textCTA = location.pathname.indexOf("/login") > -1 ? "Daftar" : "Masuk";
     const user = useSelector((state) => state.users);
+
+    // const onMouseEnter = () => {
+    //     if(window.innerWidth < 800) {
+    //         setDropdown(false)
+    //     } else {
+    //         setDropdown(true)
+    //     }
+    // }
+
+    // const onMouseLeave = () => {
+    //     if(window.innerWidth < 800) {
+    //         setDropdown(false)
+    //     }else setDropdown(true)
+    // }
+
+    function DropdownSelect() {
+        setDropdown(() => !dropdown)
+    }
+
+    function ClickOutSide(ev) {
+        if(WrapperDropdown && !WrapperDropdown.current.contains(ev.target))
+        setDropdown(false)
+    }
+
+    useEffect(() => {
+        window.addEventListener("mousedown", ClickOutSide)
+        return () => {
+            window.removeEventListener("mousedown", ClickOutSide)
+        }
+    }, [])
+
+
+    console.log(user)
 
     return (
         <Fade top>
@@ -37,33 +73,66 @@ function Header({onLight, location}) {
                     </NavLink>
                 </li>
                 <li className="my-4 md:my-0">
+                    <NavLink to="/match" activeClassName="main-nav-active" className={[LinkColor, "text-white hover:text-purple-600 font-medium text-lg px-6 py-3"].join(" ")}>
+                        Match
+                    </NavLink>
+                </li>
+                <li className="my-4 md:my-0">
                     <NavLink to="/faq" activeClassName="main-nav-active" className={[LinkColor, "text-white hover:text-purple-600 font-medium text-lg px-6 py-3"].join(" ")}>
                         FAQ
                     </NavLink>
                 </li>
-            
-                <li className="mt-8 md:mt-0">
-                    {
-                        user ? (
-                            <Link to="/dasboard"
-                                className="transition-all duration-200 rounded-lg px-5 py-2 md:ml-6 ml-24 inline-flex items-center bg-purple-900 hover:bg-purple-700"
-                            >
-                                <span className="text-white font-medium text-lg">
-                                    Hi, {user?.userName}
-                                </span>
-                            </Link>
-                        ) : (
-                            <li className="my-4 md:my-0">
-                                <Link  to={linkCTA} className="bg-purple-900 hover:bg-purple-700 transition-all duration-200 text-white rounded-md font-medium text-lg px-8 py-3 md:ml-6 ml-24">
-                                    {textCTA}
-                                </Link>
-                            </li>
-                        )
-                    }
 
+                <li ref={WrapperDropdown} onClick={DropdownSelect} className="text-white">
 
-
+                    Register 
+                    {dropdown && <DropDown />}
                 </li>
+
+                {
+                    user?.userRole === "admin" ? (
+                        <li className="mt-8 md:mt-0">
+                            {
+                                user ? (
+                                    <Link to="/dasboard/admin"
+                                        className="transition-all duration-200 rounded-lg px-5 py-2 md:ml-6 ml-24 inline-flex items-center bg-purple-900 hover:bg-purple-700"
+                                    >
+                                        <span className="text-white font-medium text-lg">
+                                            Hi, {user?.userName}
+                                        </span>
+                                    </Link>
+                                ) : (
+                                    <li className="my-4 md:my-0">
+                                        <Link  to={linkCTA} className="bg-purple-900 hover:bg-purple-700 transition-all duration-200 text-white rounded-md font-medium text-lg px-8 py-3 md:ml-6 ml-24">
+                                            {textCTA}
+                                        </Link>
+                                    </li>
+                                )
+                            }
+                        </li>
+                    ) : (
+                        <li className="mt-8 md:mt-0">
+                            {
+                                user ? (
+                                    <Link to="/dasboard"
+                                        className="transition-all duration-200 rounded-lg px-5 py-2 md:ml-6 ml-24 inline-flex items-center bg-purple-900 hover:bg-purple-700"
+                                    >
+                                        <span className="text-white font-medium text-lg">
+                                            Hi, {user?.userName}
+                                        </span>
+                                    </Link>
+                                ) : (
+                                    <li className="my-4 md:my-0">
+                                        <Link  to={linkCTA} className="bg-purple-900 hover:bg-purple-700 transition-all duration-200 text-white rounded-md font-medium text-lg px-8 py-3 md:ml-6 ml-24">
+                                            {textCTA}
+                                        </Link>
+                                    </li>
+                                )
+                            }
+                        </li>
+                    )
+                }
+
             </ul>
         </header>
         </Fade>

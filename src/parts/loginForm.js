@@ -48,7 +48,7 @@ function LoginForm({history}) {
               
               document.cookie = `ASIG:user=${JSON.stringify(userCookie)}; expires=${expires.toUTCString}; path:/`;
 
-              history.push(redirect || "/dasboard")
+              detail.userRole === "admin" ? history.push(redirect || "/dasboard/admin") : history.push(redirect || "/dasboard")
             })
           }).catch((err) => {
             setError(err?.response?.status)
