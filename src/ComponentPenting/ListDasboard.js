@@ -1,6 +1,6 @@
 import React from 'react'
-import ListDaftar from 'parts/partsDasboard/ListDaftar';
-import SideBar from 'parts/partsDasboard/SideBarAdmin';
+import ListDaftar from 'ComponentPenting/ListDaftar';
+import SideBar from 'ComponentPenting/SideBarAdmin';
 
 export default function List() {
     return (

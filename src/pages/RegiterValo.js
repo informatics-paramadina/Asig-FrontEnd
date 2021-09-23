@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from 'parts/Header'
 import Footer from 'parts/Footer'
-import RegisterGamePlayer from 'parts/partsDasboard/RegisterGamePlayer'
+import RegisterGamePlayer from 'parts/partsRegister/RegisterGamePlayer'
 
 export default function RegisterValo() {
     return (
@@ -9,9 +9,9 @@ export default function RegisterValo() {
             <div className="container mx-auto">
                 <Header  />
             </div>
-            <div className="pb-16 flex justify-center">
-                <RegisterGamePlayer />
-            </div>
+                <div className="my-40 container mx-auto">
+                    <RegisterGamePlayer />
+                </div>
             <div className="py-12 bg-purple-800 mt-24">
                 <Footer />
             </div>

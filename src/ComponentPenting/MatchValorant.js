@@ -1,5 +1,5 @@
 import Header from 'parts/Header'
-import Match from 'parts/MatchValo/Match'
+import Match from 'ComponentPenting/MatchValo/Match'
 import React from 'react';
 import Footer from 'parts/Footer'
 

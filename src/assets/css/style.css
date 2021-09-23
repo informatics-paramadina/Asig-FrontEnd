@@ -43,7 +43,7 @@ ul.breadcrumb li:last-child a {
 .stop-watch {
   @apply relative flex items-center justify-center;
   color: #06f1f6;
-  text-shadow: 1px 1px 7px;
+  text-shadow: 1px 1px 4px;
 }
 
 .stop-watch section {
@@ -259,20 +259,20 @@ aside .overlay {
 }
 
 .dropdown-menu {
-  background: red;
+  @apply z-10;
+  text-align: center;
   width: 200px;
   position: absolute;
   top: 80px;
   list-style: none;
-  text-align: start;
 }
 
 .dropdown-menu li {
-  background: #1888ff;
+  @apply bg-purple-900;
 }
 
 .dropdown-menu li:hover {
-  background: #5cabff;
+  @apply bg-indigo-700;
 }
 
 .dropdown-menu.clicked {
@@ -280,12 +280,11 @@ aside .overlay {
 }
 
 .dropdown-link {
-  @apply inset-0 z-10 cursor-pointer;
+  @apply text-indigo-500 hover:text-white;
   display: block;
   height: 100%;
   width: 100%;
   text-decoration: none;
-  color: #fff;
   padding: 16px;
 }
 

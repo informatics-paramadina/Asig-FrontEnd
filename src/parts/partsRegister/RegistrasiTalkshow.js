@@ -5,6 +5,7 @@ import users from 'Constant/Api/users';
 import {toast, ToastContainer} from 'react-toastify';
 import Select from 'Components/Select';
 import { withRouter } from 'react-router';
+import Fade from 'react-reveal/Fade';
 
 function RegistrasiTalkshow({history}) {
     const [error, setError] = useState(null)
@@ -15,10 +16,10 @@ function RegistrasiTalkshow({history}) {
         name: "",
         instansi: "",
         pekerjaan: "",
-        // outherPekerjaan: "",
         nim: "",
         outherNim: ""
     })
+    console.log(phone_number)
 
     console.log("instansi:",instansi, "pekerjaan:", pekerjaan, "outherPekerjaan:", "nim:", nim, "outherNim:",outherNim)
 
@@ -52,34 +53,44 @@ function RegistrasiTalkshow({history}) {
     }
 
     return (
-        <div className="flex justify-center items-center pb-24">
-            {/* sm:w-2/6 */}
-            <div className="w-full">
-        <form onSubmit={submit}>
+        <div className="sm:flex pb-24">
+                <div className="hidden sm:block sm:w-1/2 mr-16">
+            <Fade left>
+                    <div className="flex justify-center">
+                        <h3 className="text-purple-400 my-10 capitalize font-medium text-xl">please register to be a talk show</h3>
+                    </div>
+                    <img className="object-contain object-center mb-16" src="images/content/Talkshow.png" alt="" />
+            </Fade>
+                </div>
+
+        <div className="w-full sm:w-4/12">
+        <Fade right delay={1000}>
+            <form onSubmit={submit}>
 
             <Input 
             name="email"
             type="email"
-            placeholder="Your Email Address"
-            labelName="Email"
+            placeholder="your email address"
+            labelName="Email Address"
             onChange={setState}
             value={email}
             />
 
             <Input 
             name="phone_number"
-            type="text"
-            placeholder="Your instansi name"
+            type="tel"
+            placeholder="masukkan nomor telephone anda dengan benar"
             labelName="Phone Number"
             onChange={setState}
             value={phone_number}
+            maxLength="12"
             />
 
             <Input 
             name="name"
             type="text"
-            placeholder="Your name"
-            labelName="Name"
+            placeholder="your name"
+            labelName="Full Name"
             onChange={setState}
             value={name}
             />
@@ -87,7 +98,7 @@ function RegistrasiTalkshow({history}) {
             <Input 
             name="instansi"
             type="text"
-            placeholder="Your instansi name"
+            placeholder="my instansi"
             labelName="Instansi"
             onChange={setState}
             value={instansi}
@@ -157,7 +168,8 @@ function RegistrasiTalkshow({history}) {
             draggable
             pauseOnHover
                 />
-        </form>
+            </form>
+        </Fade>
         </div>
         </div>
     )

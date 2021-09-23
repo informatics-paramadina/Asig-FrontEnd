@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 export default function Striming() {
     return (
-        <section className="relative">
+        <section className="relative" id="match-valorant">
             <div className="">
             <img src="images/content/streming.png" className="object-cover object-center hidden md:flex" alt="" />
             <img src="images/content/streming-mobile.png" className="object-cover object-center md:hidden" alt="" />

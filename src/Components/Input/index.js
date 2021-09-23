@@ -10,12 +10,13 @@ export default function Input({
     error,
     onBlur,
     onFocus,
-    className
+    className,
+    maxLength
 }) {
     return (
             <div className="flex flex-col mb-4">
                 {labelName && (
-                    <label htmlFor={name} className="text-lg mb-2">
+                    <label htmlFor={name} className="text-lg mb-2 text-purple-600">
                         {labelName}
                     </label>
                 )}
@@ -25,10 +26,11 @@ export default function Input({
                 onChange={onChange}
                 onBlur={onBlur}
                 onFocus={onFocus}
-                className={["input bg-white", 
+                maxLength={maxLength}
+                className={["input bg-gray-800 placeholder-gray-700 w-full px-6 py-3", 
                         error ?
                         "border-red-500 text-red-500" : 
-                        "focus:border-teal-500 border-gray-600 text-gray-600", className
+                        "focus:border-teal-500 border-gray-800 text-gray-500", className
                     ].join(" ")}
                 value={value}
                 placeholder={placeholder}

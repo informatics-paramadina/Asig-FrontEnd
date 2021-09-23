@@ -5,10 +5,10 @@ export default function errorHandler(error) {
     if (error) {
         let message;
         if(error.response) {
-            if (error.response.status === 500){
-                message = "the server encountered an unexpected condition that prevented it from fulfilling the request"
-            }
-            else message = error.response.data.status;
+            // if (error.response.status === 500){
+            //     message = "the server encountered an unexpected condition that prevented it from fulfilling the request"
+            // }
+            message = error.response.data.status;
             
             if(typeof message === "string"){
                 toast.error(message, {
