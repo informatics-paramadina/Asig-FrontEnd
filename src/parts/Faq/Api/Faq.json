@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Berapa biaya pendaftaran yang dikenai game Valorant?",
+      "tanggapan": {
+        "id": 1,
+        "name": "Pendaftaran valorant per-grup total nya menjadi Rp50.000 lima puluh ribu rupiah, sudah termasuk anggota tim-nya."
+      }
+    },
+    {
+      "id": 2,
+      "name": "Berapa biaya pendaftaran yang dikenai untuk Minigame Ludo?",
+      "tanggapan": {
+        "id": 2,
+        "name": "Biaya pendaftaran Minigame catur dikenai sebesar Rp20.000 (dua puluh ribu rupiah)."
+      }
+    },
+    {
+      "id": 3,
+      "name": "Berapa biaya pendaftaran yang dikenai untuk Minigame catur?",
+      "tanggapan": {
+        "id": 3,
+        "name": "Biaya pendaftaran Minigame catur dikenai sebesar Rp20.000 (dua puluh ribu rupiah)."
+      }
+    }
+  ]
+}

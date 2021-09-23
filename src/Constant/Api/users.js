@@ -1,11 +1,8 @@
 import axios from 'config/axios';
 
 const users = {
-    login: (credentials) => axios.post("/login", credentials),
-    register: (payload) => axios.post("/user", payload),
-    details: () => axios.get("/auth-test") ,
-    registerMiniGame: (payload) => axios.post("/register/minigame", payload),
-    registerTalkShow: (payload) => axios.post("/register/talkshow", payload),
+    registerMiniGame: (payload) => axios.post("/daftar/minigame", payload),
+    registerTalkShow: (payload) => axios.post("/daftar/talkshow", payload),
 }
 
 export default users;

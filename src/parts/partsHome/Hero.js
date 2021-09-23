@@ -1,18 +1,25 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react';
 import Header from 'parts/Header';
 import YouTube from 'react-youtube';
 import LightSpeed from 'react-reveal/LightSpeed';
 
 export default function Hero() {
 
+    const Button = () =>  {
+        return (
+            <div>
+                <a href="#match-valorant" className="bg-purple-800 text-teal-400 hover:bg-teal-400 hover:text-black rounded-xl px-8 py-3 text-xl inline-block flex-none transition duration-300">
+                    Live Match
+                </a>
+            </div>
+        )
+    }
+    
     let Interval = useRef()
-    const [timerDays, setTimerDays] = useState("00")
-    const [timerHours, setTimerHours] = useState("00")
-    const [timerMinutes, setTimerMinutes] = useState("00")
-    const [timerSecond, setTimerSecond] = useState("00")
-
+    const [globalTime, setGlobalTime]= useState()
     const startTimer = () => {
-        const countDownDate = new Date('October 1, 2021 0:0:00').getTime();
+        // const countDownDate = new Date('October 1, 2021 0:0:00').getTime();
+        const countDownDate = new Date('September  23, 2021 14:42:00').getTime();
         Interval.current = setInterval(() => {
             const now = new Date().getTime();
             const distance = countDownDate - now;
@@ -22,22 +29,23 @@ export default function Hero() {
             const minutes = Math.floor((distance % (1000 * 60 * 60) / (1000 * 60)));
             const seconds = Math.floor((distance) % (1000 * 60) / 1000);
 
-            if (distance < 0) {
-                clearInterval(Interval.current)
-            }else {
-                setTimerDays(days)
-                setTimerHours(hours)
-                setTimerMinutes(minutes)
-                setTimerSecond(seconds)
-            }
+            setGlobalTime(days + " : " + hours + " : " + minutes + " : " + seconds)
+
+                if (distance < 0) {
+                    clearInterval(Interval.current)
+                    setGlobalTime(<Button />)
+                }
+
         }, 1000)
     }
+
     useEffect(() => {
         startTimer();
         return () => {
             clearInterval(Interval.current)
         }
     }, [])
+
 
 
     return (
@@ -57,7 +65,7 @@ export default function Hero() {
                     onEnd={(ev) => {ev.target.playVideo()}}
                 />
             </div>
-            <div className="inset-0 absolute z-0 w-full h-full bg-black opacity-70"></div>
+            <div className="inset-0 absolute z-0 w-full h-full bg-black opacity-60"></div>
             <div className="absolute inset-0 z-0 w-full object-fill flex items-center justify-center">
                 <div className="items-center">
                     <LightSpeed right delay={1000}>
@@ -67,23 +75,7 @@ export default function Hero() {
                     <div>
                         <div className="stop-watch mt-7">
                             <section>
-                                <p>{timerDays}</p>
-                                <small>Days</small>
-                            </section>
-                            <span>:</span>
-                            <section>
-                                <p>{timerHours}</p>
-                                <small>Hours</small>
-                            </section>
-                            <span>:</span>{" "}
-                            <section>
-                                <p>{timerMinutes}</p>
-                                <small>Minutes</small>
-                            </section>
-                            <span>:</span>{" "}
-                            <section>
-                                <p>{timerSecond}</p>
-                                <small>Second</small>
+                                <p>{globalTime}</p>
                             </section>
                         </div>
                     </div>

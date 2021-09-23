@@ -43,7 +43,7 @@ ul.breadcrumb li:last-child a {
 .stop-watch {
   @apply relative flex items-center justify-center;
   color: #06f1f6;
-  text-shadow: 1px 1px 7px;
+  text-shadow: 1px 1px 4px;
 }
 
 .stop-watch section {
@@ -257,3 +257,39 @@ aside .overlay {
   opacity: 7;
   transform: translateX(-50%) translateY(-50%) rotate(0deg);
 }
+
+.dropdown-menu {
+  @apply z-10;
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  top: 80px;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  @apply bg-purple-900;
+}
+
+.dropdown-menu li:hover {
+  @apply bg-indigo-700;
+}
+
+.dropdown-menu.clicked {
+  display: none;
+}
+
+.dropdown-link {
+  @apply text-indigo-500 hover:text-white;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  padding: 16px;
+}
+
+/*@media screen and (max-width: 960px) {
+  .fa-caret-down {
+    display: none;
+  }
+}*/

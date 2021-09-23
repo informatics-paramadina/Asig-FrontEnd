@@ -4,28 +4,37 @@ import Input from 'Components/Input';
 import users from 'Constant/Api/users';
 import {toast, ToastContainer} from 'react-toastify';
 import Select from 'Components/Select';
+import { withRouter } from 'react-router';
+import Fade from 'react-reveal/Fade';
 
-export default function RegistrasiTalkshow() {
+function RegistrasiTalkshow({history}) {
     const [error, setError] = useState(null)
 
-    const [{instansi, pekerjaan, nim, outherNim}, setState] = useForm({
+    const [{email, phone_number, name, instansi, pekerjaan, nim, outherNim}, setState] = useForm({
+        email: "",
+        phone_number: "",
+        name: "",
         instansi: "",
         pekerjaan: "",
-        // outherPekerjaan: "",
         nim: "",
         outherNim: ""
     })
+    console.log(phone_number)
 
     console.log("instansi:",instansi, "pekerjaan:", pekerjaan, "outherPekerjaan:", "nim:", nim, "outherNim:",outherNim)
 
     function submit(ev) {
         ev.preventDefault()
         users.registerTalkShow({
+            email,
+            phone_number,
+            name,
             instansi, 
             pekerjaan: pekerjaan === "Mahasiswa" ? pekerjaan : "",  
             nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
         })
         .then((res) => {
+            history.push('/')
             if(res){
                 toast.success("Registrasi Success", {
                     position: "top-right",
@@ -44,27 +53,56 @@ export default function RegistrasiTalkshow() {
     }
 
     return (
-        <div className="flex justify-center items-center pb-24">
-            <div className="w-full sm:w-2/6">
-        <form onSubmit={submit}>
+        <div className="sm:flex pb-24">
+                <div className="hidden sm:block sm:w-1/2 mr-16">
+            <Fade left>
+                    <div className="flex justify-center">
+                        <h3 className="text-purple-400 my-10 capitalize font-medium text-xl">please register to be a talk show</h3>
+                    </div>
+                    <img className="object-contain object-center mb-16" src="images/content/Talkshow.png" alt="" />
+            </Fade>
+                </div>
+
+        <div className="w-full sm:w-4/12">
+        <Fade right delay={1000}>
+            <form onSubmit={submit}>
+
+            <Input 
+            name="email"
+            type="email"
+            placeholder="your email address"
+            labelName="Email Address"
+            onChange={setState}
+            value={email}
+            />
+
+            <Input 
+            name="phone_number"
+            type="tel"
+            placeholder="masukkan nomor telephone anda dengan benar"
+            labelName="Phone Number"
+            onChange={setState}
+            value={phone_number}
+            maxLength="12"
+            />
+
+            <Input 
+            name="name"
+            type="text"
+            placeholder="your name"
+            labelName="Full Name"
+            onChange={setState}
+            value={name}
+            />
 
             <Input 
             name="instansi"
             type="text"
-            placeholder="Your instansi name"
+            placeholder="my instansi"
             labelName="Instansi"
             onChange={setState}
             value={instansi}
             />
-
-            {/* <Input 
-            name="pekerjaan"
-            type="text"
-            placeholder="Your pekerjaan name"
-            labelName="pekerjaan"
-            onChange={setState}
-            value={pekerjaan}
-            /> */}
 
             <Select 
                 name="pekerjaan" labelName="Pekerjaan" value={pekerjaan} onClick={setState}
@@ -130,8 +168,11 @@ export default function RegistrasiTalkshow() {
             draggable
             pauseOnHover
                 />
-        </form>
+            </form>
+        </Fade>
         </div>
         </div>
     )
 }
+
+export default withRouter(RegistrasiTalkshow)

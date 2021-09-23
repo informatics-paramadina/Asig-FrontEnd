@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {fetchProject} from 'Store/action/project';
 import project from 'Constant/Api/project';
 import ReactPlayer from 'react-player';
 import ReactPaginate from 'react-paginate';
@@ -9,20 +7,19 @@ import Fade from 'react-reveal/Fade';
 
 
 export default function Animation() {
-    const dispatch = useDispatch();
-    const PROJECT = useSelector(state => state.project)
+    const [fetch, setFetch] = useState([])
     useEffect(() => {
         project.animasi()
         .then((res) => {
-            dispatch(fetchProject(res))
+            setFetch(res)
         })
         .catch((err) => {
             console.log(err);
         })
-    }, [dispatch])
+    }, [])
+    console.log(fetch)
 
-    console.log(Object.values(PROJECT.data));
-    const [users] = useState(Object.values(PROJECT.data).slice(0, 7));
+    const users = fetch.slice(0, 7)
     console.log(users)
     const [pageNumber, setPageNumber] = useState(0)
     const usersPerPage = 1;
@@ -32,7 +29,7 @@ export default function Animation() {
         return (
             <>
             <Bounce bottom>
-                <div className="flex justify-center">
+                <div className="flex justify-center" key={item?.id}>
                     <div className="mb-5">
                         <ReactPlayer 
                             url={item?.project_link}

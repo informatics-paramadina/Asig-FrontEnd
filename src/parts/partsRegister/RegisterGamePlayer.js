@@ -3,20 +3,20 @@ import Input from 'Components/Input';
 import {withRouter} from 'react-router-dom';
 import useForm from 'helpers/hooks/useForm';
 import {toast, ToastContainer} from 'react-toastify';
-import {useSelector} from 'react-redux';
+import Fade from 'react-reveal/Fade';
 import axios from 'axios';
 
 
 function RegisterGamePlayer({history}) {
-
-    const DETAILS = useSelector((statee) => statee.users)
-    console.log(DETAILS)
 
     const [error, setError] = useState(null)
     let nameArr = [];
     let phoneArr = [];
     let ingameArr =  [];
 
+    console.log("nameArr",nameArr)
+    console.log("phoneArr",phoneArr)
+    console.log("ingameArr",ingameArr)
 
     let members = {
         name: "",
@@ -24,19 +24,16 @@ function RegisterGamePlayer({history}) {
         name_ingame: "",
     }
 
-    
     const [userss, setUsers] = useState([members]);
     console.log(userss)
     const addUser = () => {
         return setUsers([...userss, members])
     }
-
     const removeUser = (index) => {
         const filteredUsers = [...userss];
         filteredUsers.splice(index, 1);
         return setUsers(filteredUsers)
     }
-
     const onChange = ((e, index) => {
         const updateUsers = userss.map((user, i) => (
             index === i ? Object.assign(user, {[e.target.name]: e.target.value}) : user
@@ -44,48 +41,45 @@ function RegisterGamePlayer({history}) {
         return setUsers(updateUsers);
     })  
 
-    for (let i = 0; i < userss.length; i++) {
-        nameArr.push(userss[i].name);
-        phoneArr.push(userss[i].phone_number);
-        ingameArr.push(userss[i].name_ingame);
+    for (const items  of userss) {
+        nameArr.push(items.name);
+        phoneArr.push(items.phone_number);
+        ingameArr.push(items.name_ingame);
     }
 
-    const [{team_name}, setState] = useForm({
-        team_name: ""
+    const [{team_name, leader_email, leader_phone_number, leader_name, leader_name_ingame}, setState] = useForm({
+        team_name: "",
+        leader_email: "",
+        leader_phone_number: "",
+        leader_name: "",
+        leader_name_ingame: "",
+        
     })
-
+    console.log(team_name, leader_email, leader_phone_number, leader_name, leader_name_ingame)
+    
     const [image, setImage] = useState()
-
     async function submit(ev) {
         ev.preventDefault();
         const formData = new FormData();
+        formData.append('team_name', team_name);
+        formData.append('leader_email', leader_email);
+        formData.append('leader_phone_number', leader_phone_number);
+        formData.append('leader_name', leader_name);
+        formData.append('leader_name_ingame', leader_name_ingame);
+        formData.append('logo', image);
         formData.append('name', nameArr);
         formData.append('phone_number', phoneArr);
         formData.append('name_ingame', ingameArr);
-        formData.append('team_name', team_name);
-        formData.append('logo', image);
 
-        const check = JSON.parse(localStorage.getItem("ASIG:token"))
-        // fetch(`https://api.himti.my.id/register/game`,{
-        //     headers: {
-        //         'Authorization': `Bearer ${check.token}`
-        //     },
-        //     body: formData,
-        //     method: "POST",
-        //     // mode: "no-cors"
-        //     //mode: "cors"
-        // }
-        // )
+
         await axios({
             method: 'POST',
-            url: `${process.env.REACT_APP_API_HOST}/register/game`,
+            url: `${process.env.REACT_APP_API_HOST}/daftar/game`,
             data: formData,
-            headers: {
-                'Authorization': `Bearer ${check.token}`
-            },
         })
         
             .then((res) => {
+            history.push('/')
             if(res){
                 toast.success("Registrasi Success", {
                     position: "top-right",
@@ -101,27 +95,77 @@ function RegisterGamePlayer({history}) {
         .catch((err) => {
             setError(err?.response?.data?.status)
         })
-
     }
 
 
     return (
         <>
-            <div className="flex justify-center items-center">
-                <div className="w-full sm:w-2/6">
+            <div className="sm:flex">
+                <Fade left>
+                    <div className="hidden sm:block sm:w-3/6 mr-16">
+                    <div className="flex justify-center">
+                        <h3 className="text-purple-400 my-10 capitalize text-xl">please register to take part in the <br />valorant competition</h3>
+                    </div>
+                        <img className="object-contain object-center mb-16" src="images/content/Valorant.png" alt="" />
+                    </div>
+                </Fade>
+                <Fade right delay={1000}>
+                <div className="w-full sm:w-4/12">
                     <form onSubmit={submit}>
+
+                        <Input 
+                            name="leader_name"
+                            type="text"
+                            placeholder="nama lengkap anda"
+                            labelName="Name leader"
+                            onChange={setState}
+                            value={leader_name}
+                            error={error}
+                        />
+
+                        <Input 
+                            name="leader_email"
+                            type="email"
+                            placeholder="email address yang valid"
+                            labelName="Email Leader"
+                            onChange={setState}
+                            value={leader_email}
+                            error={error}
+                        />
+
+                        <Input 
+                            name="leader_phone_number"
+                            type="tel"
+                            placeholder="massukan nomor telephone anda dengan benar"
+                            labelName="Phone number leader"
+                            onChange={setState}
+                            value={leader_phone_number}
+                            error={error}
+                            maxLength="12"
+                        />
+
+                        <Input 
+                            name="leader_name_ingame"
+                            type="text"
+                            placeholder="name ingame"
+                            labelName="Name ingame leader"
+                            onChange={setState}
+                            value={leader_name_ingame}
+                            error={error}
+                        />
+
                         <Input 
                             name="team_name"
                             type="text"
-                            placeholder="Your Team"
+                            placeholder="nama team anda"
                             labelName="Team Name"
                             onChange={setState}
                             value={team_name}
                             error={error}
-                            />
+                        />
 
                         <div className="flex flex-col mb-4">
-                            <label htmlFor="logo" className="text-lg mb-2">
+                            <label htmlFor="logo" className="text-lg mb-2 text-purple-600">
                                 Logo Team
                             </label>
                             <input 
@@ -130,8 +174,12 @@ function RegisterGamePlayer({history}) {
                                 placeholder="Name"
                                 labelName="team Name"
                                 onChange={(e) => setImage(e.target.files[0])}
-                                className="bg-gray-300 hover:bg-gray-400 cursor-pointer transition-all duration-200 focus:outline-none text-white px-6 py-3 my-3 w-auto"
+                                className="bg-gray-800 cursor-pointer focus:outline-none text-gray-700 px-6 py-3 my-3 w-auto"
                             />
+                        </div>
+
+                        <div className="mt-16 mb-8">
+                            <h2 className="text-purple-400 font-medium text-xl">Masukkan anggota team kamu ya &#128522;</h2>
                         </div>
 
                         {
@@ -148,18 +196,19 @@ function RegisterGamePlayer({history}) {
                                     />
                                 <Input 
                                 name="phone_number"
-                                type="text"
-                                placeholder="Your Phone Number"
+                                type="tel"
+                                placeholder="your phone number"
                                 labelName="Phone Number"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.phone_number}
                                 error={error}
+                                maxLength="12"
                                 />
 
                                 <Input 
                                 name="name_ingame"
                                 type="text"
-                                placeholder="Your InGame"
+                                placeholder="your inGame"
                                 labelName="In Game"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.name_ingame}
@@ -201,9 +250,10 @@ function RegisterGamePlayer({history}) {
                             Remove
                         </button>
                 </div>
+                </Fade>
         </div>
         </>
     )
 }
 
-export default withRouter(RegisterGamePlayer)
+export default withRouter(RegisterGamePlayer);

@@ -1,7 +1,7 @@
 import React from 'react'
-import SideBar from 'parts/partsDasboard/SideBar';
+import SideBar from 'ComponentPenting/SideBarAdmin';
 
-export default function MyDasboard() {
+export default function MyDasboardAdmin() {
     return (
         <div className="flex">
             <SideBar />

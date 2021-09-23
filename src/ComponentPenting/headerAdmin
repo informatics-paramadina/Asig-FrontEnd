@@ -1,0 +1,43 @@
+# {
+#                     user?.userRole === "admin" ? (
+#                         <li className="mt-8 md:mt-0">
+#                             {
+#                                 user ? (
+#                                     <Link to="/dasboard/admin"
+#                                         className="transition-all duration-200 rounded-lg px-5 py-2 md:ml-6 ml-24 inline-flex items-center bg-purple-900 hover:bg-purple-700"
+#                                     >
+#                                         <span className="text-white font-medium text-lg">
+#                                             Hi, {user?.userName}
+#                                         </span>
+#                                     </Link>
+#                                 ) : (
+#                                     <li className="my-4 md:my-0">
+#                                         <Link  to={linkCTA} className="bg-purple-900 hover:bg-purple-700 transition-all duration-200 text-white rounded-md font-medium text-lg px-8 py-3 md:ml-6 ml-24">
+#                                             {textCTA}
+#                                         </Link>
+#                                     </li>
+#                                 )
+#                             }
+#                         </li>
+#                     ) : (
+#                         <li className="mt-8 md:mt-0">
+#                             {
+#                                 user ? (
+#                                     <Link to="/dasboard"
+#                                         className="transition-all duration-200 rounded-lg px-5 py-2 md:ml-6 ml-24 inline-flex items-center bg-purple-900 hover:bg-purple-700"
+#                                     >
+#                                         <span className="text-white font-medium text-lg">
+#                                             Hi, {user?.userName}
+#                                         </span>
+#                                     </Link>
+#                                 ) : (
+#                                     <li className="my-4 md:my-0">
+#                                         <Link  to={linkCTA} className="bg-purple-900 hover:bg-purple-700 transition-all duration-200 text-white rounded-md font-medium text-lg px-8 py-3 md:ml-6 ml-24">
+#                                             {textCTA}
+#                                         </Link>
+#                                     </li>
+#                                 )
+#                             }
+#                         </li>
+#                     )
+#                 }

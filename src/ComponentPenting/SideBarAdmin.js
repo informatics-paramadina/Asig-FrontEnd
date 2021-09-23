@@ -3,30 +3,8 @@ import {Link, withRouter} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import users from 'Constant/Api/users';
 
-function SideBarLink({setActive, isActive, children, title}) {
-    return  (
-        <div className="px-auto w-full">
-        <h5 className="text-white relative py-3 px-5">
-                {title}
-                <button onClick={() => setActive(isActive)}
-                    className={["absolute block right-5 transform -translate-y-1/2 transition-all duration-300 focus:outline-none top-1/2",
-                    isActive ? "rotate-0" : "rotate-180"].join(" ")}
-                    >
-                    <svg width="20" height="9" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L9.75 7.5L18.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-        </h5>
-                <ul className={["md:h-auto md:opacity-100 overflow-hidden transition-all duration-300 main-menu", 
-                    isActive ? "h-0 invisible opacity-0" : "opacity-100"].join(" ")}>
-                        {children}
-                </ul>
-        </div>
-    )
-}
 function SideBar({match, history}) {
     const [toggleMenu, setToggleMenu] = useState(false)
-    const [active, setActive] = useState(null)
     const USERS = useSelector((state) => state.users);
     const getNavLink = (path) => {
         return (
@@ -60,6 +38,9 @@ function SideBar({match, history}) {
                                 </div>
                             </div>
 
+                            <span className="text-indigo-500 text-sm pb-2">
+                                {USERS?.userRole ?? "admin"}
+                            </span>
                             <h6 className="text-white text-xl">
                                 {USERS?.userName ?? "UserName"}
                             </h6>
@@ -82,61 +63,15 @@ function SideBar({match, history}) {
                             <li>
                                 <Link
                                 className={["nav-link relative flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white w-full text-left",
-                                    getNavLink("/shcedule")
+                                    getNavLink("/listdaftar")
                                 ].join(" ")}
-                                to="/shcedule"
+                                to="/listdaftar"
                                 >
-                                Shcedule
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                className={["nav-link relative flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white w-full text-left",
-                                    getNavLink("/sertifikat")
-                                ].join(" ")}
-                                to="/sertifikat"
-                                >
-                                Sertifikat
+                                List Daftar
                                 </Link>
                             </li>
                         </ul>
 
-                            <SideBarLink 
-                                setActive={setActive}
-                                isActive={active === 1 ? null : 1 }
-                                title="Register"
-                            >
-                                <li>
-                                    <Link
-                                    className={["nav-link relative flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white w-full text-left",
-                                        getNavLink("/game")
-                                    ].join(" ")}
-                                    to="/game"
-                                    >
-                                    Valorant
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                    className={["nav-link relative flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white w-full text-left",
-                                        getNavLink("/minigame")
-                                    ].join(" ")}
-                                    to="/minigame"
-                                    >
-                                    MiniGame
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                    className={["nav-link relative flex items-center py-3 px-5 transition-all duration-200 hover:text-white active:text-white w-full text-left",
-                                        getNavLink("/talkshow")
-                                    ].join(" ")}
-                                    to="/talkshow"
-                                    >
-                                    TalkShow
-                                    </Link>
-                                </li>
-                            </SideBarLink>
                     <div className="my-auto"></div>
                     <ul className="main-menu mb-16">
                         <li>
