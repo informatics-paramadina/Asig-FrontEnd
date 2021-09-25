@@ -59,11 +59,6 @@ export default function Header({onLight}) {
                         Exhibition
                     </NavLink>
                 </li>
-                <li className="my-4 md:my-0">
-                    <NavLink to="/faq" activeClassName="main-nav-active" className={[LinkColor, "text-white hover:text-purple-600 font-medium text-lg px-8 py-3"].join(" ")}>
-                        FAQ
-                    </NavLink>
-                </li>
             </ul>
         </header>
         </Fade>

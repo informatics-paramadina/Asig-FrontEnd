@@ -30,7 +30,7 @@ function RegistrasiTalkshow({history}) {
             phone_number,
             name,
             instansi, 
-            pekerjaan: pekerjaan === "Mahasiswa" ? pekerjaan : "",  
+            pekerjaan: pekerjaan === "Mahasiswa" || "Karyawan Swasta" || "Pegawai Negeri Sipil" || "Dosen" ? pekerjaan : "",  
             nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
         })
         .then((res) => {
@@ -118,9 +118,6 @@ function RegistrasiTalkshow({history}) {
                 </option>
                 <option value="Mahasiswa">
                     Mahasiswa
-                </option>
-                <option value="Pelajar">
-                    Pelajar
                 </option>
             </Select>
             {
