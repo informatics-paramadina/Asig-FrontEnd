@@ -115,11 +115,23 @@ function RegistrasiTalkshow({history}) {
                 <option value="Karyawan Swasta">
                     Karyawan Swasta
                 </option>
+                <option value="Karyawan Swasta">
+                    Wirausahawan
+                </option>
                 <option value="Dosen">
                     Dosen
                 </option>
                 <option value="Mahasiswa">
                     Mahasiswa
+                </option>
+                <option value="Mahasiswa">
+                    Freelance
+                </option>
+                <option value="Mahasiswa">
+                    Siswa
+                </option>
+                <option value="Mahasiswa">
+                    Lainnya
                 </option>
             </Select>
             {
