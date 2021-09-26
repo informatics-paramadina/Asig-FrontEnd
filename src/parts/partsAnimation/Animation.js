@@ -31,7 +31,7 @@ export default function Animation() {
             <Bounce bottom>
                 <div className="flex justify-center" key={item?.id}>
                     <div className="mb-5">
-                        <ReactPlayer 
+                        <ReactPlayer
                             url={item?.project_link}
                             width='700px'
                             height='400px'
@@ -42,9 +42,9 @@ export default function Animation() {
                 <div className="mb-10 text-gray-400">
                 <h2 className="text-3xl font-bold flex justify-center">{item?.nama_project ?? "name Project"}</h2>
                 <p className="text-lg my-10">{item?.description ?? "Description"}</p>
-                    <h4 className=""> 
-                        <span className=" font-medium pr-2">Made by :</span> 
-                            {item?.creator ?? "creator"} 
+                    <h4 className="">
+                        <span className=" font-medium pr-2">Made by :</span>
+                            {item?.creator ?? "creator"}
                     </h4>
                 </div>
             </Bounce>
@@ -56,19 +56,19 @@ export default function Animation() {
     const changePage = ({selected}) => {
         setPageNumber(selected)
     }
-    
+
     return (
         <div className="mt-28">
             <div className="container mx-auto w-4/5 h-screen">
                     {displayUsers}
-                <div className="my-20">
+                <div className="flex my-20 justify-center">
                     <Fade left delay={1000}>
-                        <ReactPaginate 
+                        <ReactPaginate
                             previousLabel={"<<"}
                             nextLabel={">>"}
                             pageCount={pageCount}
                             onPageChange={changePage}
-                            containerClassName={"pagination"}
+                            containerClassName={"pagination px-24"}
                             previousLinkClassName={"previousBttn"}
                             nextLinkClassName={"nextBttn"}
                             disabledClassName={"paginationDisabled"}

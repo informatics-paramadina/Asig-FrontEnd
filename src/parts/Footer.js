@@ -68,7 +68,7 @@ export default function Footer() {
                         </Link>
                     </li>
                     <li className="my-5">
-                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
+                        <Link to="/exhibition" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
                             Exhibition
                         </Link>
                     </li>
