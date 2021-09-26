@@ -29,8 +29,10 @@ function RegistrasiTalkshow({history}) {
             email,
             phone_number,
             name,
+
             instansi,
             pekerjaan: pekerjaan === "Mahasiswa" || "Karyawan Swasta" || "Pegawai Negeri Sipil" || "Dosen" ? pekerjaan : "",
+
             nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
         })
         .then((res) => {

@@ -93,8 +93,10 @@ function RegisterMiniGame({history}) {
                             <Input
                                 name="name_ingame"
                                 type="text"
+
                                 placeholder="in Game"
                                 labelName="In game"
+
                                 onChange={setState}
                                 value={name_ingame}
                             />
