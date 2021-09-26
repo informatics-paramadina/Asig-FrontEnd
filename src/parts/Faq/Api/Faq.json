@@ -13,15 +13,23 @@
       "name": "Berapa biaya pendaftaran yang dikenai untuk Minigame Ludo?",
       "tanggapan": {
         "id": 2,
-        "name": "Biaya pendaftaran Minigame catur dikenai sebesar Rp20.000 (dua puluh ribu rupiah)."
+        "name": "Biaya pendaftaran Minigame Ludo tidak dikenakan biaya apapun."
       }
     },
     {
       "id": 3,
-      "name": "Berapa biaya pendaftaran yang dikenai untuk Minigame catur?",
+      "name": "Dimana penyelenggaraan kompetisi Valorant?",
       "tanggapan": {
         "id": 3,
-        "name": "Biaya pendaftaran Minigame catur dikenai sebesar Rp20.000 (dua puluh ribu rupiah)."
+        "name": "penyelenggaraan Kompetisi Valorant dilakukan dirumah masing-masing, dengan perangkat dan koneksi Internet yang mendukung."
+      }
+    },
+    {
+      "id": 4,
+      "name": "Selama berapa hari acara ASIG14 Berlanjut?",
+      "tanggapan": {
+        "id": 4,
+        "name": "Acara ASIG14 berlanjut selama 4 hari, dari tanggal Senin 11 Oktober - Kamis 14 Oktober dimulai pada pukul 9 pagi."
       }
     }
   ]

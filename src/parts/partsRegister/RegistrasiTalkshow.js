@@ -29,8 +29,8 @@ function RegistrasiTalkshow({history}) {
             email,
             phone_number,
             name,
-            instansi, 
-            pekerjaan: pekerjaan === "Mahasiswa" ? pekerjaan : "",  
+            instansi,
+            pekerjaan: pekerjaan === "Mahasiswa" || "Karyawan Swasta" || "Pegawai Negeri Sipil" || "Dosen" ? pekerjaan : "",
             nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
         })
         .then((res) => {
@@ -67,44 +67,44 @@ function RegistrasiTalkshow({history}) {
         <Fade right delay={1000}>
             <form onSubmit={submit}>
 
-            <Input 
+            <Input
             name="email"
             type="email"
-            placeholder="your email address"
+            placeholder="Johnsmith@example.com"
             labelName="Email Address"
             onChange={setState}
             value={email}
             />
 
-            <Input 
+            <Input
             name="phone_number"
             type="tel"
-            placeholder="masukkan nomor telephone anda dengan benar"
+            placeholder="(+62) 0000-0000-0000"
             labelName="Phone Number"
             onChange={setState}
             value={phone_number}
             maxLength="12"
             />
 
-            <Input 
+            <Input
             name="name"
             type="text"
-            placeholder="your name"
+            placeholder="John Smith"
             labelName="Full Name"
             onChange={setState}
             value={name}
             />
 
-            <Input 
+            <Input
             name="instansi"
             type="text"
-            placeholder="my instansi"
+            placeholder="University of Paramadina"
             labelName="Instansi"
             onChange={setState}
             value={instansi}
             />
 
-            <Select 
+            <Select
                 name="pekerjaan" labelName="Pekerjaan" value={pekerjaan} onClick={setState}
             >
                 <option value="Pegawai Negeri Sipil">
@@ -119,13 +119,10 @@ function RegistrasiTalkshow({history}) {
                 <option value="Mahasiswa">
                     Mahasiswa
                 </option>
-                <option value="Pelajar">
-                    Pelajar
-                </option>
             </Select>
             {
                 pekerjaan === "Mahasiswa" && (
-                    <Select 
+                    <Select
                         name="nim" labelName="Mahasiswa" value={nim} onClick={setState}
                         >
                         <option value="Mahasiswa Luar">
@@ -140,7 +137,7 @@ function RegistrasiTalkshow({history}) {
 
             {
                 nim === "Mahasiswa Paramadina" && (
-                    <Input 
+                    <Input
                     value={outherNim}
                     onChange={setState}
                     name="outherNim"

@@ -7,8 +7,8 @@ const FooterLinks = ({isActive, setActive, children, title}) => {
         <div className="px-auto w-full md:w-1/6 md:mb-0 mb-2">
             <h5 className="text-xl font-semibold mb-2 relative text-white">
                 {title}
-            <button onClick={() => setActive(isActive)} 
-            className={["absolute block md:hidden right-0 transform -translate-y-1/2 focus:outline-none transition-all duration-300 top-1/2", 
+            <button onClick={() => setActive(isActive)}
+            className={["absolute block md:hidden right-0 transform -translate-y-1/2 focus:outline-none transition-all duration-300 top-1/2",
             isActive ? "rotate-0" : "rotate-180"].join(" ")}
             >
             <svg width="20" height="9" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,14 +16,14 @@ const FooterLinks = ({isActive, setActive, children, title}) => {
             </svg>
             </button>
             </h5>
-            <ul className={["md:h-auto md:visible md:opacity-100 overflow-hidden transition-all duration-200", 
+            <ul className={["md:h-auto md:visible md:opacity-100 overflow-hidden transition-all duration-200",
             isActive ? "h-0 invisible opacity-0" : "opacity-100"].join(" ")}
             >
                 {children}
             </ul>
         </div>
     )
-} 
+}
 
 export default function Footer() {
     const [active, setActive] = useState(null)
@@ -36,17 +36,17 @@ export default function Footer() {
                     title= "About Us"
                 >
                     <li className="mt-5">
-                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline"> 
+                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
                             Comunity
                         </Link>
                     </li>
                     <li className="mt-5">
-                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline"> 
+                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
                             Jobs
                         </Link>
                     </li>
                     <li className="my-5">
-                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline"> 
+                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
                             Blogs
                         </Link>
                     </li>
@@ -58,17 +58,17 @@ export default function Footer() {
                     title= "Explore"
                 >
                     <li className="mt-5">
-                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline"> 
+                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
                             Home
                         </Link>
                     </li>
                     <li className="mt-5">
-                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline"> 
+                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
                             About
                         </Link>
                     </li>
                     <li className="my-5">
-                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline"> 
+                        <Link to="/" className="text-purple-700 text-lg hover:text-teal-500 hover:underline">
                             Exhibition
                         </Link>
                     </li>
@@ -107,7 +107,7 @@ export default function Footer() {
                 </FooterLinks>
             </div>
             <div className="border-t pt-8 mt-8 border-gray-700 text-center">
-                <p className="text-gray-500">2021 Copyright ASIG. All Rights Reserved</p>
+                <p className="text-gray-500">2021 Copyright Paramadina. All Rights Reserved</p>
             </div>
         </section>
     )
