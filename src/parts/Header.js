@@ -39,8 +39,8 @@ export default function Header({onLight}) {
             <div className="flex md:hidden">
                 <button onClick={() => setToggleMenu((prev) => (!prev))} className={["toggle z-50", ToggleMenu ? "active" : ""].join(" ")}></button>
             </div>
-            <ul 
-            className={["transition-all duration-200 items-center fixed inset-0 bg-purple-900 pt-40 md:pt-0 md:bg-transparent md:relative md:flex md:opacity-100 md:visible", 
+            <ul
+            className={["transition-all duration-200 items-center fixed inset-0 bg-purple-900 pt-40 md:pt-0 md:bg-transparent md:relative md:flex md:opacity-100 md:visible",
             ToggleMenu ? "opacity-100 visible z-20" : "opacity-0 invisible"
             ].join(" ")}>
                 <li className="my-4 md:my-0">
@@ -64,4 +64,3 @@ export default function Header({onLight}) {
         </Fade>
     )
 }
-

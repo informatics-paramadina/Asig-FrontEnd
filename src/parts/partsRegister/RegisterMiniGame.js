@@ -65,39 +65,41 @@ function RegisterMiniGame({history}) {
                 <div className="w-full sm:w-4/12">
                     <Fade right delay={1000}>
                         <form onSubmit={submit}>
-                            <Input 
+                            <Input
                                 name="email"
                                 type="email"
-                                placeholder="your email address"
+                                placeholder="Johnsmith@example.com"
                                 labelName="Email  Address"
                                 onChange={setState}
                                 value={email}
                             />
 
-                            <Input 
+                            <Input
                                 name="phone_number"
                                 type="tel"
-                                placeholder="masukkan nomor telephone anda dengan benar"
+                                placeholder="(+62) 0000-0000-0000"
                                 labelName="Phone Number"
                                 onChange={setState}
                                 value={phone_number}
                                 maxLength="12"
                             />
 
-                            <Input 
+                            <Input
                                 name="name"
                                 type="text"
-                                placeholder="your name"
+                                placeholder="John Smith"
                                 labelName="Full Name"
                                 onChange={setState}
                                 value={name}
                             />
 
-                            <Input 
+                            <Input
                                 name="name_ingame"
                                 type="text"
-                                placeholder="in game"
-                                labelName="In Game"
+
+                                placeholder="in Game"
+                                labelName="In game"
+
                                 onChange={setState}
                                 value={name_ingame}
                             />

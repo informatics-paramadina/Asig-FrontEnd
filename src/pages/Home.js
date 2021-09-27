@@ -15,7 +15,6 @@ export default function HomePages() {
         <>
         <div className="bg-purple-900">
         <Hero />
-            {/* <SponsorSlider /> */}
             <Game />
             <Striming />
             <FAQ />

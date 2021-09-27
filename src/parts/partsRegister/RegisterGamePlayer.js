@@ -41,7 +41,7 @@ function RegisterGamePlayer({history}) {
             index === i ? Object.assign(user, {[e.target.name]: e.target.value}) : user
         ))
         return setUsers(updateUsers);
-    })  
+    })
 
     for (const items  of userss) {
         nameArr.push(items.name);
@@ -55,10 +55,10 @@ function RegisterGamePlayer({history}) {
         leader_phone_number: "",
         leader_name: "",
         leader_name_ingame: "",
-        
+
     })
     console.log(team_name, leader_email, leader_phone_number, leader_name, leader_name_ingame)
-    
+
     const [image, setImage] = useState()
     async function submit(ev) {
         ev.preventDefault();
@@ -79,7 +79,7 @@ function RegisterGamePlayer({history}) {
             url: `${process.env.REACT_APP_API_HOST}/daftar/game`,
             data: formData,
         })
-        
+
             .then((res) => {
                 setTimeout(() => {
                     history.push('/')
@@ -125,30 +125,30 @@ function RegisterGamePlayer({history}) {
                 <div className="w-full sm:w-4/12">
                     <form onSubmit={submit}>
 
-                        <Input 
+                        <Input
                             name="leader_name"
                             type="text"
-                            placeholder="nama lengkap anda"
+                            placeholder="John Smith"
                             labelName="Name leader"
                             onChange={setState}
                             value={leader_name}
                             error={error}
                         />
 
-                        <Input 
+                        <Input
                             name="leader_email"
                             type="email"
-                            placeholder="email address yang valid"
+                            placeholder="Johnsmith@example.com"
                             labelName="Email Leader"
                             onChange={setState}
                             value={leader_email}
                             error={error}
                         />
 
-                        <Input 
+                        <Input
                             name="leader_phone_number"
                             type="tel"
-                            placeholder="massukan nomor telephone anda dengan benar"
+                            placeholder="(+62) 0000-0000-0000"
                             labelName="Phone number leader"
                             onChange={setState}
                             value={leader_phone_number}
@@ -156,17 +156,17 @@ function RegisterGamePlayer({history}) {
                             maxLength="12"
                         />
 
-                        <Input 
+                        <Input
                             name="leader_name_ingame"
                             type="text"
-                            placeholder="name ingame"
+                            placeholder="JohnSmith_7"
                             labelName="Name ingame leader"
                             onChange={setState}
                             value={leader_name_ingame}
                             error={error}
                         />
 
-                        <Input 
+                        <Input
                             name="team_name"
                             type="text"
                             placeholder="nama team anda"
@@ -180,7 +180,7 @@ function RegisterGamePlayer({history}) {
                             <label htmlFor="logo" className="text-lg mb-2 text-purple-600">
                                 Logo Team
                             </label>
-                            <input 
+                            <input
                                 name="logo"
                                 type="file"
                                 placeholder="Name"
@@ -197,7 +197,7 @@ function RegisterGamePlayer({history}) {
                         {
                             userss.map((user, index) => {
                                 return  <div key={index}>
-                                <Input 
+                                <Input
                                     name="name"
                                     type="text"
                                     placeholder="Your Name"
@@ -206,7 +206,7 @@ function RegisterGamePlayer({history}) {
                                     value={user.name}
                                     error={error}
                                     />
-                                <Input 
+                                <Input
                                 name="phone_number"
                                 type="tel"
                                 placeholder="your phone number"
@@ -217,7 +217,7 @@ function RegisterGamePlayer({history}) {
                                 maxLength="12"
                                 />
 
-                                <Input 
+                                <Input
                                 name="name_ingame"
                                 type="text"
                                 placeholder="your inGame"
