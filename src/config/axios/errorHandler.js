@@ -11,7 +11,7 @@ export default function errorHandler(error) {
             message = error.response.data.status;
             
             if(typeof message === "string"){
-                toast.error(message, {
+                toast.error(message + " 🤯", {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,

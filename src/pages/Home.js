@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from 'parts/partsHome/Hero';
+// import SponsorSlider from 'parts/partsHome/SponsorSlider';
 import Sponsor from 'parts/partsHome/Sponsor';
 import Striming from 'parts/partsHome/Striming';
 import Game from 'parts/partsAnimation/Game';
@@ -17,6 +18,7 @@ export default function HomePages() {
             <Game />
             <Striming />
             <FAQ />
+            <Sponsor />
             <div className="py-12 bg-purple-800 mt-24">
                 <Footer />
             </div>

@@ -6,7 +6,7 @@ import Slider from "react-slick";
 
 function SampleArrow() {
     return (
-        <div
+        <div 
             style={{display: 'none'}}
         />
     )
@@ -14,6 +14,7 @@ function SampleArrow() {
 
 
 export default function Sponsor() {
+
     return (
         <section className="">
             <div className="container mx-auto">
@@ -21,7 +22,7 @@ export default function Sponsor() {
                     <h2 className="text-xl font-semibold text-white my-10"><span className="font-medium text-blue-600">PROUD</span> <br className="hidden md:flex"/>PARTNERS</h2>
                 </div>
             <div >
-                <Slider
+                <Slider  
                     infinite={true}
                     slidesToShow={4}
                     slidesToScroll={1}
@@ -41,8 +42,8 @@ export default function Sponsor() {
                 <div className="w-full my-8">
                     <img src="/images/content/HyperX.svg" className="mx-auto" alt="" />
                 </div>
-                <div className="mt-7 flex justify-center">
-                    <h2 className="text-red-500 text-xl animate-pulse">Sponsor masih dalam Process!!! &#128522;</h2>
+                <div className="w-full my-8">
+                    <img src="/images/content/Logitech.svg" className="mx-auto" alt="" />
                 </div>
                 <div className="w-full my-8">
                     <img src="/images/content/Asus.svg" className="mx-auto" alt="" />
@@ -51,7 +52,16 @@ export default function Sponsor() {
                     <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Danacita_SVG.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
+                </div>
+                <div className="w-full my-8">
+                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
+                </div>
+                <div className="w-full my-8">
+                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
+                </div>
+                <div className="w-full my-8">
+                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
                 </div>
                 </Slider>
             </div>
