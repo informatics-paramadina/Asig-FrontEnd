@@ -18,8 +18,7 @@ export default function Hero() {
     let Interval = useRef()
     const [globalTime, setGlobalTime]= useState()
     const startTimer = () => {
-        // const countDownDate = new Date('October 1, 2021 0:0:00').getTime();
-        const countDownDate = new Date('September  23, 2021 14:42:00').getTime();
+        const countDownDate = new Date('October 11, 2021 09:00:00').getTime();
         Interval.current = setInterval(() => {
             const now = new Date().getTime();
             const distance = countDownDate - now;

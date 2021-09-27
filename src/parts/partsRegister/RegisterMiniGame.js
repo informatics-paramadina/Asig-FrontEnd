@@ -20,9 +20,11 @@ function RegisterMiniGame({history}) {
         ev.preventDefault()
         users.registerMiniGame({email,phone_number,name,name_ingame})
         .then((res) => {
-            history.push('/')
-            if(res){
-                toast.success("Registrasi Success", {
+            setTimeout(() => {
+                history.push('/')
+            }, 2000);
+            if (res) {
+                toast.success("Registrasi Success 👌", {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -32,19 +34,20 @@ function RegisterMiniGame({history}) {
                     progress: undefined,
                 })
             }
-            console.log(res)
         })
         .catch((err) => {
             // setError(err?.response?.data?.status)
-            toast.error(setError(err?.response?.data?.status), {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+            if (err) {
+                toast.error(setError(err?.response?.data?.status), {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
+            }
         })
     }
 

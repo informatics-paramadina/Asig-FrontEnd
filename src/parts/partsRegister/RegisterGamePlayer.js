@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import Input from 'Components/Input';
 import {withRouter} from 'react-router-dom';
 import useForm from 'helpers/hooks/useForm';
-import {toast, ToastContainer} from 'react-toastify';
+import {ToastContainer,toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
 
@@ -10,6 +11,7 @@ import axios from 'axios';
 function RegisterGamePlayer({history}) {
 
     const [error, setError] = useState(null)
+
     let nameArr = [];
     let phoneArr = [];
     let ingameArr =  [];
@@ -27,11 +29,11 @@ function RegisterGamePlayer({history}) {
     const [userss, setUsers] = useState([members]);
     console.log(userss)
     const addUser = () => {
-        return setUsers([...userss, members])
+        return userss.length <= 4 ? setUsers([...userss, members]) : null;  
     }
-    const removeUser = (index) => {
+    const removeUser = () => {
         const filteredUsers = [...userss];
-        filteredUsers.splice(index, 1);
+        filteredUsers.splice(1, 1);
         return setUsers(filteredUsers)
     }
     const onChange = ((e, index) => {
@@ -79,9 +81,11 @@ function RegisterGamePlayer({history}) {
         })
         
             .then((res) => {
-            history.push('/')
+                setTimeout(() => {
+                    history.push('/')
+                }, 2000);
             if(res){
-                toast.success("Registrasi Success", {
+                toast.success("Registrasi Success 👌", {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -93,7 +97,15 @@ function RegisterGamePlayer({history}) {
             }
         })
         .catch((err) => {
-            setError(err?.response?.data?.status)
+            toast.error(setError(err?.response?.data?.status), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
         })
     }
 

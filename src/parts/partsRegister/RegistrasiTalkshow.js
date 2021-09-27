@@ -34,9 +34,11 @@ function RegistrasiTalkshow({history}) {
             nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
         })
         .then((res) => {
-            history.push('/')
+            setTimeout(() => {
+                history.push('/')
+            }, 2000);
             if(res){
-                toast.success("Registrasi Success", {
+                toast.success("Registrasi Success 👌", {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
