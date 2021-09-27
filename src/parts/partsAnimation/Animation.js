@@ -58,7 +58,7 @@ export default function Animation() {
     }
 
     return (
-        <div className="mt-28">
+        <div className="mt-36">
             <div className="container mx-auto w-4/5 h-screen">
                     {displayUsers}
                 <div className="flex my-20 justify-center">

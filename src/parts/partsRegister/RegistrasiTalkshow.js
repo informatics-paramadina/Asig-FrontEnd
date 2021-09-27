@@ -31,8 +31,7 @@ function RegistrasiTalkshow({history}) {
             name,
 
             instansi,
-            pekerjaan: pekerjaan === "Mahasiswa" || "Karyawan Swasta" || "Pegawai Negeri Sipil" || "Dosen" ? pekerjaan : "",
-
+            pekerjaan: pekerjaan === "Mahasiswa" || "Karyawan Swasta" || "Pegawai Negeri Sipil" || "Wirausahawan" || "Freelance" || "Lainnya" || "Dosen" ? pekerjaan : "",
             nim: nim === "Mahasiswa Paramadina" ? outherNim : ""
         })
         .then((res) => {
