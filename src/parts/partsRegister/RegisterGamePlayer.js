@@ -29,7 +29,7 @@ function RegisterGamePlayer({history}) {
     const [userss, setUsers] = useState([members]);
     console.log(userss)
     const addUser = () => {
-        return userss.length <= 4 ? setUsers([...userss, members]) : null;  
+        return userss.length <= 4 ? setUsers([...userss, members]) : null;
     }
     const removeUser = () => {
         const filteredUsers = [...userss];
@@ -200,7 +200,7 @@ function RegisterGamePlayer({history}) {
                                 <Input
                                     name="name"
                                     type="text"
-                                    placeholder="Your Name"
+                                    placeholder="Jane Doe"
                                     labelName="Full Name"
                                     onChange={(e) => onChange(e, index)}
                                     value={user.name}
@@ -209,7 +209,7 @@ function RegisterGamePlayer({history}) {
                                 <Input
                                 name="phone_number"
                                 type="tel"
-                                placeholder="your phone number"
+                                placeholder="(+62) 0000-0000-0000"
                                 labelName="Phone Number"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.phone_number}
@@ -220,7 +220,7 @@ function RegisterGamePlayer({history}) {
                                 <Input
                                 name="name_ingame"
                                 type="text"
-                                placeholder="your inGame"
+                                placeholder="JaneDoe"
                                 labelName="In Game"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.name_ingame}
