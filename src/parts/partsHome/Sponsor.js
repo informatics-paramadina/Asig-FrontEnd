@@ -38,20 +38,26 @@ export default function Sponsor() {
                         }
                     ]}
                 >
-                <div className="w-full my-8">
+                <div className="w-full m-8">
                     <img src="/images/content/ERA.svg" className="m-auto w-64" alt="" />
                 </div>
                 <div className="mt-7 flex justify-center">
                     <h2 className="text-red-500 text-xl animate-pulse">Sponsor masih dalam Process!!! &#128522;</h2>
                 </div>
-                <div className="w-full my-8">
-                    <img src="/images/content/Parmagz.svg" className="m-auto " alt="" />
+                <div className="w-full m-8">
+                    <img src="/images/content/Parmagz.svg" className="m-auto w-80" alt="" />
                 </div>
-                <div className="w-full my-8">
-                    <img src="/images/content/Twitch.svg" className="m-auto " alt="" />
+                <div className="w-full m-8">
+                    <img src="/images/content/Twitch.svg" className="m-auto w-64" alt="" />
                 </div>
-                <div className="w-full my-8">
-                    <img src="/images/content/Danacita_SVG.svg" className="m-auto " alt="" />
+                <div className="w-full m-8">
+                    <img src="/images/content/Danacita_SVG.svg" className="m-auto w-80" alt="" />
+                </div>
+                <div className="w-full m-8">
+                    <img src="/images/content/eventkampus.svg" className="m-auto w-80" alt="" />
+                </div>
+                <div className="w-full m-8">
+                    <img src="/images/content/idcloudhost.svg" className="m-auto w-80" alt="" />
                 </div>
                 </Slider>
             </div>
