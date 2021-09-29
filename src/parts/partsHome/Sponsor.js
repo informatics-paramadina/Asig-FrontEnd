@@ -39,19 +39,19 @@ export default function Sponsor() {
                     ]}
                 >
                 <div className="w-full my-8">
-                    <img src="/images/content/HyperX.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/ERA.svg" className="m-auto w-64" alt="" />
                 </div>
                 <div className="mt-7 flex justify-center">
                     <h2 className="text-red-500 text-xl animate-pulse">Sponsor masih dalam Process!!! &#128522;</h2>
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Asus.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/Parmagz.svg" className="m-auto " alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/Twitch.svg" className="m-auto " alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Danacita_SVG.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/Danacita_SVG.svg" className="m-auto " alt="" />
                 </div>
                 </Slider>
             </div>
