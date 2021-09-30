@@ -39,25 +39,25 @@ export default function Sponsor() {
                     ]}
                 >
                 <div className="w-full m-8">
-                    <img src="/images/content/ERA.svg" className="m-auto w-64" alt="" />
+                    <img src="/images/content/ERA.svg" className="m-auto md:w-64 w-36" alt="" />
                 </div>
                 <div className="mt-7 flex justify-center">
                     <h2 className="text-red-500 text-xl animate-pulse">Sponsor masih dalam Process!!! &#128522;</h2>
                 </div>
                 <div className="w-full m-8">
-                    <img src="/images/content/Parmagz.svg" className="m-auto w-80" alt="" />
+                    <img src="/images/content/Parmagz.svg" className="m-auto md:w-80 w-48" alt="" />
                 </div>
                 <div className="w-full m-8">
-                    <img src="/images/content/Twitch.svg" className="m-auto w-64" alt="" />
+                    <img src="/images/content/Twitch.svg" className="m-auto md:w-64 w-40" alt="" />
                 </div>
                 <div className="w-full m-8">
-                    <img src="/images/content/Danacita_SVG.svg" className="m-auto w-80" alt="" />
+                    <img src="/images/content/Danacita_SVG.svg" className="m-auto md:w-80 w-48" alt="" />
                 </div>
                 <div className="w-full m-8">
-                    <img src="/images/content/eventkampus.svg" className="m-auto w-80" alt="" />
+                    <img src="/images/content/eventkampus.svg" className="m-auto md:w-80 w-48" alt="" />
                 </div>
                 <div className="w-full m-8">
-                    <img src="/images/content/idcloudhost.svg" className="m-auto w-80" alt="" />
+                    <img src="/images/content/idcloudhost.svg" className="m-auto md:w-80 w-48" alt="" />
                 </div>
                 </Slider>
             </div>

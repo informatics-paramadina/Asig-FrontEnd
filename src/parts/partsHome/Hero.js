@@ -50,7 +50,7 @@ export default function Hero() {
 
     return (
         <section className="pt-10 md:px-0 relative overflow-hidden" style={{height: 660}}>
-            <div className="video-wrapper min-h-screen md:min-h-full">
+            <div className="video-wrapper min-h-screen md:min-h-full md:visible invisible">
                 <YouTube
                     videoId="AOqsO03mOEs" id="AOqsO03mOEs"
                     opts = {{

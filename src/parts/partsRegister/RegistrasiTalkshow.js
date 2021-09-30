@@ -74,7 +74,7 @@ function RegistrasiTalkshow({history}) {
             name="email"
             type="email"
             placeholder="Johnsmith@example.com"
-            labelName="Email Address"
+            labelName="Alamat Email"
             onChange={setState}
             value={email}
             />
@@ -83,7 +83,7 @@ function RegistrasiTalkshow({history}) {
             name="phone_number"
             type="tel"
             placeholder="(+62) 0000-0000-0000"
-            labelName="Phone Number"
+            labelName="No Telepon"
             onChange={setState}
             value={phone_number}
             maxLength="12"
@@ -93,7 +93,7 @@ function RegistrasiTalkshow({history}) {
             name="name"
             type="text"
             placeholder="John Smith"
-            labelName="Full Name"
+            labelName="Nama lengkap"
             onChange={setState}
             value={name}
             />
@@ -167,7 +167,7 @@ function RegistrasiTalkshow({history}) {
                 type="submit"
                 className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
             >
-            Continue
+            Submit
             </button>
             <ToastContainer
             position="top-right"

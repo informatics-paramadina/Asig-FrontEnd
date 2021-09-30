@@ -97,8 +97,8 @@ function RegisterMiniGame({history}) {
                                 name="name_ingame"
                                 type="text"
 
-                                placeholder="in Game"
-                                labelName="In game"
+                                placeholder="JohnSmith_7"
+                                labelName="Nickname"
 
                                 onChange={setState}
                                 value={name_ingame}
