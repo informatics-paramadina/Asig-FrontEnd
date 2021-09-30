@@ -48,7 +48,7 @@ export default function Hero() {
 
 
     return (
-        <section className="pt-10 px-4 md:px-0 relative overflow-hidden" style={{height: 660}}>
+        <section className="pt-10 md:px-0 relative overflow-hidden" style={{height: 660}}>
             <div className="video-wrapper min-h-screen md:min-h-full">
                 <YouTube 
                     videoId="AOqsO03mOEs" id="AOqsO03mOEs"
@@ -81,7 +81,7 @@ export default function Hero() {
                     </LightSpeed>
                 </div>
             </div>
-                <div className="container mx-auto z-20 relative">
+                <div className="mx-4 z-20 relative">
                     <Header />
                 </div>
         </section>

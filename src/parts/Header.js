@@ -41,7 +41,7 @@ export default function Header({onLight}) {
             </div>
             <ul 
             className={["transition-all duration-200 items-center fixed inset-0 bg-purple-900 pt-40 md:pt-0 md:bg-transparent md:relative md:flex md:opacity-100 md:visible", 
-            ToggleMenu ? "opacity-100 visible z-20" : "opacity-0 invisible"
+            ToggleMenu ? "opacity-100 visible z-30" : "opacity-0 invisible"
             ].join(" ")}>
                 <li className="my-4 md:my-0">
                     <NavLink exact to="/" activeClassName="main-nav-active" className={[LinkColor, "text-white hover:text-purple-600 font-medium text-lg px-8 py-3"].join(" ")}>

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Sponsor() {
     return (
-        <section className="bg-purple-800 mt-16">
+        <section className="mt-16">
             <div className="container mx-auto py-10">
                 <div className="flex justify-center">
                     <h2 className="text-blue-600 text-2xl font-medium">Proud Partners</h2>
