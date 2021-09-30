@@ -262,11 +262,10 @@ aside .overlay {
 }
 
 .dropdown-menu {
-  @apply z-10;
+  @apply z-10 md:top-20;
   text-align: center;
   width: 200px;
   position: absolute;
-  top: 80px;
   list-style: none;
 }
 

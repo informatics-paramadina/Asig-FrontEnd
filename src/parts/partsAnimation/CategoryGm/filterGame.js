@@ -32,7 +32,7 @@ export default function FilterGame() {
                                 <Iframe 
                                     url={item?.project_link ?? "Gamess"}
                                     position="relative"
-                                    className="w-full h-screen"
+                                    className="w-full h-screen z-10"
                                 />
                             </div>
                         </div>
