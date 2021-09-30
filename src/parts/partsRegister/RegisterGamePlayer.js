@@ -139,7 +139,7 @@ function RegisterGamePlayer({history}) {
                             name="leader_email"
                             type="email"
                             placeholder="Johnsmith@example.com"
-                            labelName="Email Leader"
+                            labelName="Email leader"
                             onChange={setState}
                             value={leader_email}
                             error={error}
@@ -160,7 +160,7 @@ function RegisterGamePlayer({history}) {
                             name="leader_name_ingame"
                             type="text"
                             placeholder="JohnSmith_7"
-                            labelName="Name ingame leader"
+                            labelName="Nickname leader"
                             onChange={setState}
                             value={leader_name_ingame}
                             error={error}
@@ -221,7 +221,7 @@ function RegisterGamePlayer({history}) {
                                 name="name_ingame"
                                 type="text"
                                 placeholder="JaneDoe"
-                                labelName="In Game"
+                                labelName="Nickname"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.name_ingame}
                                 error={error}
@@ -235,7 +235,7 @@ function RegisterGamePlayer({history}) {
                             type="submit"
                             className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                         >
-                            Continue
+                            Submit
                         </button>
                         <ToastContainer
                         position="top-right"
@@ -257,9 +257,9 @@ function RegisterGamePlayer({history}) {
                         </button>
                         <button
                             onClick={(index) => removeUser(index)}
-                            className="bg-red-400 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-1/2 mx-20"
+                            className="border-4 border-red-400 hover:bg-red-400 transition-all duration-200 shadow-inner text-red-400 hover:text-white px-6 py-3 mt-4 w-full"
                         >
-                            Remove
+                            Hapus peserta
                         </button>
                 </div>
                 </Fade>
