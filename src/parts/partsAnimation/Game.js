@@ -21,16 +21,16 @@ export default function Game() {
 
 console.log(fetch[0]);
     return (
-        <section className="container px-4 mx-auto pt-24">
+        <section className="container px-4 mx-auto pt-24 md:visible invisible">
             <div className="flex justify-between items-center">
                 <div className="w-auto">
                     <h2 className="text-2xl text-white">Show <span className="font-medium text-blue-600">Games</span></h2>
                 </div>
                 <div className="w-auto">
-                    <Link to="/games" className="text-teal-400 hover:underline text-sm">View All Games</Link>
+                    <Link to="/" className="text-teal-400 hover:underline text-sm">View All Games</Link>
                 </div>
             </div>
-            <div className="flex flex-wrap justify-start items-center -mx-4 mt-6">
+            <div className="flex flex-wrap justify-start items-center -mx-4 mt-6 md:flex hidden">
                 {
                     fetch?.map((item) => {
                         return (
@@ -48,7 +48,7 @@ console.log(fetch[0]);
                                     <Link className="link-wrapped" to={`games/${item?.nama_project}/${item?.id}`}></Link>
                                 </div>
                                 </div>
-                                </Zoom>                                
+                                </Zoom>
                             </div>
                         )
                     })
