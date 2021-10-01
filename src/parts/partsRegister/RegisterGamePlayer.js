@@ -112,7 +112,7 @@ function RegisterGamePlayer({history}) {
 
     return (
         <>
-            <div className="sm:flex">
+            <div className="sm:flex h-full">
                 <Fade left>
                     <div className="hidden sm:block sm:w-3/6 mr-16">
                     <div className="flex justify-center">
@@ -122,7 +122,7 @@ function RegisterGamePlayer({history}) {
                     </div>
                 </Fade>
                 <Fade right delay={1000}>
-                <div className="w-full sm:w-4/12">
+                <div className="w-full sm:w-4/12 flex flex-col">
                     <form onSubmit={submit}>
 
                         <Input
@@ -251,13 +251,13 @@ function RegisterGamePlayer({history}) {
                     </form>
                         <button
                             onClick={addUser}
-                            className="bg-teal-400  hover:bg-teal-300 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                            className="bg-teal-400 hover:bg-teal-300 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                         >
                             Tambah peserta <i className="ri-user-add-fill ri-lg"></i>
                         </button>
                         <button
                             onClick={(index) => removeUser(index)}
-                            className="border-4 border-red-400 hover:bg-red-400 transition-all duration-200 shadow-inner text-red-400 hover:text-white px-6 py-3 mt-4 w-full"
+                            className="border-4 border-red-400 hover:bg-red-400 transition-all duration-200 shadow-inner text-red-400 hover:text-white px-6 py-3 mt-4 w-3/5"
                         >
                             Hapus peserta
                         </button>
