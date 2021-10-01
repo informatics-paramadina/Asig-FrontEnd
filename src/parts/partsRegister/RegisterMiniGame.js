@@ -108,7 +108,7 @@ function RegisterMiniGame({history}) {
                                 type="submit"
                                 className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
                             >
-                                Continue
+                                Submit
                             </button>
                             <ToastContainer
                             position="top-right"
