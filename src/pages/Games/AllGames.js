@@ -14,8 +14,8 @@ export default function AllGames() {
                 <Header />
             </div>
             <BreadCrumb list={[
-                {url: "/games", name: "Games"},
-                {url: `/games/${nama_project}/${id}`, name: "Category"}
+                {url: "/", name: "Games"},
+                {url: `/games/${nama_project}/${id}`, name: `${nama_project}`}
             ]} />
             <Curut />
             <div className="py-12 bg-purple-800 mt-24">
