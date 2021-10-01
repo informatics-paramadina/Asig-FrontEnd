@@ -112,7 +112,7 @@ function RegisterGamePlayer({history}) {
 
     return (
         <>
-            <div className="sm:flex h-full">
+            <div className="sm:flex">
                 <Fade left>
                     <div className="hidden sm:block sm:w-3/6 mr-16">
                     <div className="flex justify-center">
@@ -122,7 +122,7 @@ function RegisterGamePlayer({history}) {
                     </div>
                 </Fade>
                 <Fade right delay={1000}>
-                <div className="w-full sm:w-4/12 flex flex-col">
+                <div className="w-full sm:w-4/12">
                     <form onSubmit={submit}>
 
                         <Input
