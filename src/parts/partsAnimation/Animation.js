@@ -29,7 +29,7 @@ export default function Animation() {
         return (
             <>
             <Bounce bottom>
-                <div className="flex mb-5 justify-center" key={item?.id}>
+                <div className="flex mb-5 justify-center aspect-w-16 aspect-h-9" key={item?.id}>
                     <ReactPlayer
                         url={item?.project_link}
                         height="full"
