@@ -29,15 +29,13 @@ export default function Animation() {
         return (
             <>
             <Bounce bottom>
-                <div className="flex justify-center" key={item?.id}>
-                    <div className="mb-5">
-                        <ReactPlayer
-                            url={item?.project_link}
-                            width='700px'
-                            height='400px'
-                            controls
-                        />
-                    </div>
+                <div className="flex mb-5 justify-center" key={item?.id}>
+                    <ReactPlayer
+                        url={item?.project_link}
+                        height="full"
+                        width="full"
+                        controls
+                    />
                 </div>
                 <div className="mb-10 text-gray-400">
                 <h2 className="text-3xl font-bold flex justify-center">{item?.nama_project ?? "name Project"}</h2>
@@ -58,7 +56,7 @@ export default function Animation() {
     }
 
     return (
-        <div className="mt-36">
+        <div className="md:my-36 my-24">
             <div className="container mx-auto w-4/5 h-screen">
                     {displayUsers}
                 <div className="flex my-20 justify-center">
