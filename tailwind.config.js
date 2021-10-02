@@ -18,7 +18,7 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      
+
       gray: {
         100: "#f9f9f9",
         200: "#f1f1f1",
@@ -1058,5 +1058,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+       require('@tailwindcss/aspect-ratio'),
+ ],
 }
