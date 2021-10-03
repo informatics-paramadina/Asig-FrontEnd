@@ -16,7 +16,7 @@ function SampleArrow() {
 export default function Sponsor() {
 
     return (
-        <section className="">
+        <section className="pb-16">
             <div className="container mx-auto">
                 <div className="flex md:justify-start justify-center">
                     <h2 className="text-xl font-semibold text-white my-10"><span className="font-medium text-blue-600">PROUD</span> <br className="hidden md:flex"/>PARTNERS</h2>
@@ -24,8 +24,8 @@ export default function Sponsor() {
             <div >
                 <Slider  
                     infinite={true}
-                    slidesToShow={4}
-                    slidesToScroll={1}
+                    slidesToShow={3}
+                    // slidesToScroll={1}
                     autoplay={true}
                     nextArrow={<SampleArrow />}
                     prevArrow={<SampleArrow />}
@@ -40,28 +40,22 @@ export default function Sponsor() {
                     ]}
                 >
                 <div className="w-full my-8">
-                    <img src="/images/content/HyperX.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/ERA.svg" className="mx-auto" alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Logitech.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/Danacita_SVG.svg" className="mx-auto" alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Asus.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/jktinfo.svg" className="mx-auto" alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/eventkampus.svg" className="mx-auto" alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/idcloudhost.svg" className="mx-auto" alt="" />
                 </div>
                 <div className="w-full my-8">
-                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
-                </div>
-                <div className="w-full my-8">
-                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
-                </div>
-                <div className="w-full my-8">
-                    <img src="/images/content/Twitch.svg" className="mx-auto" alt="" />
+                    <img src="/images/content/Parmagz.svg" className="mx-auto" alt="" />
                 </div>
                 </Slider>
             </div>

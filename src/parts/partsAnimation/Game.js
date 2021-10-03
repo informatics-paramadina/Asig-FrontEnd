@@ -30,7 +30,7 @@ console.log(fetch[0]);
                     <Link to="/" className="text-teal-400 hover:underline text-sm">View All Games</Link>
                 </div>
             </div>
-            <div className="flex flex-wrap justify-start items-center -mx-4 mt-6 md:flex hidden">
+            <div className="flex-wrap justify-start items-center -mx-4 mt-6 md:flex hidden">
                 {
                     fetch?.map((item) => {
                         return (
