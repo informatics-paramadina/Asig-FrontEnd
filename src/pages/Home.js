@@ -1,7 +1,6 @@
 import React from 'react';
 import Hero from 'parts/partsHome/Hero';
-// import SponsorSlider from 'parts/partsHome/SponsorSlider';
-import Sponsor from 'parts/partsHome/Sponsor';
+import SponsorSlider from 'parts/partsHome/SponsorSlider';
 import Striming from 'parts/partsHome/Striming';
 import Game from 'parts/partsAnimation/Game';
 import useScroll from 'helpers/hooks/useScroll';
@@ -15,10 +14,10 @@ export default function HomePages() {
         <>
         <div className="bg-purple-900">
         <Hero />
+            <SponsorSlider />
             <Game />
             <Striming />
             <FAQ />
-            <Sponsor />
             <div className="py-12 bg-purple-800 mt-24">
                 <Footer />
             </div>

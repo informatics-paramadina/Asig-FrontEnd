@@ -81,7 +81,7 @@ function RegisterMiniGame({history}) {
                                 labelName="Phone Number"
                                 onChange={setState}
                                 value={phone_number}
-                                maxLength="12"
+                                maxLength="13"
                             />
 
                             <Input

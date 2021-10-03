@@ -86,7 +86,7 @@ function RegistrasiTalkshow({history}) {
             labelName="No Telepon"
             onChange={setState}
             value={phone_number}
-            maxLength="12"
+            maxLength="13"
             />
 
             <Input

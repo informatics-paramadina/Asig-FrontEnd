@@ -153,7 +153,7 @@ function RegisterGamePlayer({history}) {
                             onChange={setState}
                             value={leader_phone_number}
                             error={error}
-                            maxLength="12"
+                            maxLength="13"
                         />
 
                         <Input
@@ -214,7 +214,7 @@ function RegisterGamePlayer({history}) {
                                 onChange={(e) => onChange(e, index)}
                                 value={user.phone_number}
                                 error={error}
-                                maxLength="12"
+                                maxLength="13"
                                 />
 
                                 <Input
