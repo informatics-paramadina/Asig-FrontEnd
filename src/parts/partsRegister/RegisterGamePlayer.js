@@ -118,7 +118,7 @@ function RegisterGamePlayer({history}) {
                     <div className="flex justify-center">
                         <h3 className="text-purple-400 my-10 capitalize text-xl">please register to take part in the <br />valorant competition</h3>
                     </div>
-                        <img className="object-contain object-center mb-16" src="images/content/Valorant.png" alt="" />
+                        <img className="object-contain object-center mb-16" src="images/content/Valorant.png" alt="Jett Valorant" title="Jett Valorant Character"/>
                     </div>
                 </Fade>
                 <Fade right delay={1000}>
