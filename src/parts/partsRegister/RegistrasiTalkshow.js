@@ -56,17 +56,21 @@ function RegistrasiTalkshow({history}) {
     }
 
     return (
-        <div className="sm:flex pb-24">
-                <div className="hidden sm:block sm:w-1/2 mr-16">
-            <Fade left>
+        <div className="sm:flex justify-around">
+               <div className="hidden sm:block sm:w-1/2">
+               <Fade left>
                     <div className="flex justify-center">
-                        <h3 className="text-purple-400 my-10 capitalize font-medium text-xl">please register to be a talk show</h3>
+                        <h3 className="text-purple-400 my-10 capitalize font-medium text-2xl">Please register to join our talkshow and you will get free an e-Certificate.</h3>
                     </div>
-                    <img className="object-contain object-center mb-16" src="images/content/Talkshow.png" alt="" />
-            </Fade>
-                </div>
+               </Fade>
+               <Fade left delay={500}>
+                    <div className="flex justify-center">
+                        <img className="object-contain object-center w-auto" src="images/content/FlyerTalkshow.jpg" alt="talkshow" title="Poster Talkshow ASIG14" />
+                    </div>
+               </Fade>
+               </div>
 
-        <div className="w-full sm:w-4/12">
+        <div className="w-full sm:w-4/12 my-auto">
         <Fade right delay={1000}>
             <form onSubmit={submit}>
 
