@@ -58,20 +58,23 @@ function RegistrasiTalkshow({history}) {
     return (
         <div className="sm:flex justify-around">
                <div className="hidden sm:block sm:w-1/2">
-               <Fade left>
-                    <div className="flex justify-center">
-                        <h3 className="text-purple-400 my-10 capitalize font-medium text-2xl">Please register to join our talkshow and you will get free an e-Certificate.</h3>
-                    </div>
-               </Fade>
-               <Fade left delay={500}>
-                    <div className="flex justify-center">
-                        <img className="object-contain object-center w-auto" src="images/content/FlyerTalkshow.jpg" alt="talkshow" title="Poster Talkshow ASIG14" />
-                    </div>
-               </Fade>
+                    {/*
+                    <Fade left>
+                         <div className="flex justify-center">
+                             <h3 className="text-purple-400 my-10 capitalize font-medium text-2xl">Please register to join our talkshow and you will get free an e-Certificate.</h3>
+                         </div>
+                    </Fade>
+                    */}
+                    <Fade left delay={500}>
+                         <div className="flex justify-center">
+                             <img className="object-contain object-center w-auto" src="images/content/FlyerTalkshow.jpg" alt="talkshow" title="Poster Talkshow ASIG14" />
+                         </div>
+                    </Fade>
                </div>
 
         <div className="w-full sm:w-4/12 my-auto">
         <Fade right delay={1000}>
+             <h3 className="text-purple-400 my-10 capitalize font-medium text-2xl">Please register to join our talkshow and you will get free an e-Certificate.</h3>
             <form onSubmit={submit}>
 
             <Input
