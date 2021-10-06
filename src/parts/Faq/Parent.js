@@ -21,7 +21,7 @@ export default function Faq({ previews }) {
                 key={item?.id}
               >
                 <div className="relative flex items-center pr-4 pl-8 pb-5">
-                  <span className="text-teal-500 text-sm">{item?.tanggapan?.name}</span>
+                  <span className="text-teal-500 text-lg">{item?.tanggapan?.name}</span>
                 </div>
               </Item>
               )

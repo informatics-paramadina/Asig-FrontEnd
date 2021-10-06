@@ -6,7 +6,7 @@ import Slider from "react-slick";
 
 function SampleArrow() {
     return (
-        <div 
+        <div
             style={{display: 'none'}}
         />
     )
@@ -22,7 +22,7 @@ export default function Sponsor() {
                     <h2 className="text-xl font-semibold text-white my-10"><span className="font-medium text-blue-600">PROUD</span> <br className="hidden md:flex"/>PARTNERS</h2>
                 </div>
             <div >
-                <Slider  
+                <Slider
                     infinite={true}
                     slidesToShow={3}
                     // slidesToScroll={1}
@@ -42,9 +42,11 @@ export default function Sponsor() {
                 <div className="w-full my-8">
                     <img src="/images/content/ERA.svg" className="mx-auto" alt="" />
                 </div>
+                {/*
                 <div className="w-full my-8">
                     <img src="/images/content/Danacita_SVG.svg" className="mx-auto" alt="" />
                 </div>
+                */}
                 <div className="w-full my-8">
                     <img src="/images/content/jktinfo.svg" className="mx-auto" alt="" />
                 </div>
