@@ -1,36 +1,59 @@
 {
-  "data": [
-    {
-      "id": 1,
-      "name": "Berapa biaya pendaftaran yang dikenai game Valorant?",
-      "tanggapan": {
-        "id": 1,
-        "name": "Pendaftaran valorant per-grup total nya menjadi Rp100.000 seratus ribu rupiah, sudah termasuk anggota tim-nya."
-      }
-    },
-    {
-      "id": 2,
-      "name": "Berapa biaya pendaftaran yang dikenai untuk Minigame Ludo?",
-      "tanggapan": {
-        "id": 2,
-        "name": "Biaya pendaftaran Minigame Ludo tidak dikenakan biaya apapun."
-      }
-    },
-    {
-      "id": 3,
-      "name": "Dimana penyelenggaraan kompetisi Valorant?",
-      "tanggapan": {
-        "id": 3,
-        "name": "penyelenggaraan Kompetisi Valorant dilakukan dirumah masing-masing, dengan perangkat dan koneksi Internet yang mendukung."
-      }
-    },
-    {
-      "id": 4,
-      "name": "Selama berapa hari acara ASIG14 Berlanjut?",
-      "tanggapan": {
-        "id": 4,
-        "name": "Acara ASIG14 berlanjut selama 4 hari, dari tanggal Senin 11 Oktober - Kamis 14 Oktober dimulai pada pukul 9 pagi."
-      }
-    }
-  ]
+     "data": [{
+               "id": 1,
+               "name": "Apa itu ASIG14?",
+               "tanggapan": {
+                    "id": 1,
+                    "name": "ASIG (Area of Science and Games) Connectivity in Digital. Kegiatan acara tahunan yang dipersembahkan oleh Himpunan Mahasiswa Teknik Informatika dari Universitas Paramadina."
+               }
+          },
+          {
+               "id": 2,
+               "name": "Berapa biaya pendaftaran yang dikenai game Valorant?",
+               "tanggapan": {
+                    "id": 2,
+                    "name": "Pendaftaran valorant per-grup total nya menjadi Rp100.000 seratus ribu rupiah, sudah termasuk anggota tim-nya. untuk info lebih lanjut mengenai lomba kompetisi Valoran, silahkan hubungi ke nomor 0856-8604-521 (Diaz) & 0813-6035-2834 (Alifian)."
+               }
+          },
+          {
+               "id": 3,
+               "name": "Berapa biaya pendaftaran yang dikenai untuk Minigame Ludo?",
+               "tanggapan": {
+                    "id": 3,
+                    "name": "Biaya pendaftaran Minigame Ludo tidak dikenakan biaya apapun."
+               }
+          },
+          {
+               "id": 4,
+               "name": "Berapa biaya pendaftaran yang dikenai untuk mengikuti acara kegiatan Talkshow?",
+               "tanggapan": {
+                    "id": 4,
+                    "name": "Biaya pendaftaran kegiatan acara talkshow tidak dikenakan biaya apapun dan anda akan mendapatkan E-sertifikat."
+               }
+          },
+          {
+               "id": 5,
+               "name": "Dimana penyelenggaraan kompetisi Valorant?",
+               "tanggapan": {
+                    "id": 5,
+                    "name": "Penyelenggaraan Kompetisi Valorant dilakukan dirumah masing-masing, dengan perangkat komputer/laptop dan koneksi Internet yang mendukung."
+               }
+          },
+          {
+               "id": 6,
+               "name": "Dimana penyelenggaraan untuk Acara Talkshow?",
+               "tanggapan": {
+                    "id": 6,
+                    "name": "Penyelenggaraan Acara Talkshow akan dilaksanakan secara daring dengan menggunakan platform video call Zoom."
+               }
+          },
+          {
+               "id": 7,
+               "name": "Selama berapa hari acara ASIG14 Berlanjut?",
+               "tanggapan": {
+                    "id": 7,
+                    "name": "Acara ASIG14 berlanjut selama 4 hari, dari tanggal Senin 11 Oktober - Kamis 14 Oktober dimulai pada pukul 9 pagi."
+               }
+          }
+     ]
 }

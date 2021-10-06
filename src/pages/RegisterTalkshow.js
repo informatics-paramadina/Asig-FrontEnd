@@ -6,7 +6,7 @@ import FormTalkshow from 'parts/partsRegister/RegistrasiTalkshow';
 export default function RegisterTalkshow() {
     return (
         <section className="bg-purple-900">
-            <div className="px-5 sm:px-0 pt-10">
+            <div className="px-5 sm:px-0 pt-10 z-10">
                 <div className="z-10 container mx-auto relative sm:block">
                     <Header  />
                 </div>
@@ -14,7 +14,7 @@ export default function RegisterTalkshow() {
                     <FormTalkshow />
                 </div>
             </div>
-            <div className="py-12 bg-purple-800 mt-24">
+            <div className="py-12 bg-purple-800 mt-52">
                 <Footer />
             </div>
         </section>
