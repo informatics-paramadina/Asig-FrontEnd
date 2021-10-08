@@ -109,7 +109,6 @@ function RegisterGamePlayer({history}) {
         })
     }
 
-
     return (
         <>
             <div className="sm:flex">
