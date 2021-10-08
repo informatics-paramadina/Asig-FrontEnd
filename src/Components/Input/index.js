@@ -11,7 +11,8 @@ export default function Input({
     onBlur,
     onFocus,
     className,
-    maxLength
+    maxLength,
+    disabled
 }) {
     return (
             <div className="flex flex-col mb-4">
@@ -27,6 +28,7 @@ export default function Input({
                 onBlur={onBlur}
                 onFocus={onFocus}
                 maxLength={maxLength}
+                disabled={disabled}
                 className={["input bg-gray-800 placeholder-gray-700 w-full px-6 py-3", 
                         error ?
                         "border-red-500 text-red-500" : 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import useForm from 'helpers/hooks/useForm';
 import Input from 'Components/Input';
 import users from 'Constant/Api/users';
@@ -51,6 +51,7 @@ function RegisterMiniGame({history}) {
         })
     }
 
+
     return (
         <div className="sm:flex justify-around">
             {/* sm:w-2/6 */}
@@ -80,6 +81,8 @@ function RegisterMiniGame({history}) {
                                 labelName="Email  Address"
                                 onChange={setState}
                                 value={email}
+                                className="cursor-not-allowed"
+                                disabled
                             />
 
                             <Input
@@ -90,6 +93,8 @@ function RegisterMiniGame({history}) {
                                 onChange={setState}
                                 value={phone_number}
                                 maxLength="13"
+                                className="cursor-not-allowed"
+                                disabled
                             />
 
                             <Input
@@ -99,24 +104,27 @@ function RegisterMiniGame({history}) {
                                 labelName="Full Name"
                                 onChange={setState}
                                 value={name}
+                                className="cursor-not-allowed"
+                                disabled
                             />
 
                             <Input
                                 name="name_ingame"
                                 type="text"
-
                                 placeholder="JohnSmith_7"
                                 labelName="Nickname"
-
                                 onChange={setState}
                                 value={name_ingame}
+                                className="cursor-not-allowed"
+                                disabled
                             />
 
                             <button
+                                disabled
                                 type="submit"
-                                className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                                className="bg-purple-800 focus:outline-none shadow-inner cursor-not-allowed text-blue-800 font-semibold px-6 py-3 mt-4 w-full"
                             >
-                                Submit
+                                Maaf Pendaftaran Sudah Kami Tutup 
                             </button>
                             <ToastContainer
                             position="top-right"
