@@ -28,14 +28,14 @@ function RegisterGamePlayer({history}) {
 
     const [userss, setUsers] = useState([members]);
     console.log(userss)
-    const addUser = () => {
-        return userss.length <= 4 ? setUsers([...userss, members]) : null;
-    }
-    const removeUser = () => {
-        const filteredUsers = [...userss];
-        filteredUsers.splice(1, 1);
-        return setUsers(filteredUsers)
-    }
+    // const addUser = () => {
+    //     return userss.length <= 0 ? setUsers([...userss, members]) : null;
+    // }
+    // const removeUser = () => {
+    //     const filteredUsers = [...userss];
+    //     filteredUsers.splice(1, 1);
+    //     return setUsers(filteredUsers)
+    // }
     const onChange = ((e, index) => {
         const updateUsers = userss.map((user, i) => (
             index === i ? Object.assign(user, {[e.target.name]: e.target.value}) : user
@@ -129,9 +129,11 @@ function RegisterGamePlayer({history}) {
                             type="text"
                             placeholder="John Smith"
                             labelName="Name leader"
+                            className="cursor-not-allowed"
                             onChange={setState}
                             value={leader_name}
                             error={error}
+                            disabled
                         />
 
                         <Input
@@ -139,9 +141,11 @@ function RegisterGamePlayer({history}) {
                             type="email"
                             placeholder="Johnsmith@example.com"
                             labelName="Email leader"
+                            className="cursor-not-allowed"
                             onChange={setState}
                             value={leader_email}
                             error={error}
+                            disabled
                         />
 
                         <Input
@@ -149,10 +153,12 @@ function RegisterGamePlayer({history}) {
                             type="tel"
                             placeholder="(+62) 0000-0000-0000"
                             labelName="Phone number leader"
+                            className="cursor-not-allowed"
                             onChange={setState}
                             value={leader_phone_number}
                             error={error}
                             maxLength="13"
+                            disabled
                         />
 
                         <Input
@@ -160,19 +166,23 @@ function RegisterGamePlayer({history}) {
                             type="text"
                             placeholder="JohnSmith_7"
                             labelName="Nickname leader"
+                            className="cursor-not-allowed"
                             onChange={setState}
                             value={leader_name_ingame}
                             error={error}
+                            disabled
                         />
 
                         <Input
                             name="team_name"
                             type="text"
                             placeholder="nama team anda"
+                            className="cursor-not-allowed"
                             labelName="Team Name"
                             onChange={setState}
                             value={team_name}
                             error={error}
+                            disabled
                         />
 
                         <div className="flex flex-col mb-4">
@@ -185,7 +195,8 @@ function RegisterGamePlayer({history}) {
                                 placeholder="Name"
                                 labelName="team Name"
                                 onChange={(e) => setImage(e.target.files[0])}
-                                className="bg-gray-800 cursor-pointer focus:outline-none text-gray-700 px-6 py-3 my-3 w-auto"
+                                className="bg-gray-800 cursor-not-allowed focus:outline-none text-gray-700 px-6 py-3 my-3 w-auto"
+                                disabled
                             />
                         </div>
 
@@ -201,19 +212,23 @@ function RegisterGamePlayer({history}) {
                                     type="text"
                                     placeholder="Jane Doe"
                                     labelName="Full Name"
+                                    className="cursor-not-allowed"
                                     onChange={(e) => onChange(e, index)}
                                     value={user.name}
                                     error={error}
+                                    disabled
                                     />
                                 <Input
                                 name="phone_number"
                                 type="tel"
                                 placeholder="(+62) 0000-0000-0000"
                                 labelName="Phone Number"
+                                className="cursor-not-allowed"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.phone_number}
                                 error={error}
                                 maxLength="13"
+                                disabled
                                 />
 
                                 <Input
@@ -221,20 +236,23 @@ function RegisterGamePlayer({history}) {
                                 type="text"
                                 placeholder="JaneDoe"
                                 labelName="Nickname"
+                                className="cursor-not-allowed"
                                 onChange={(e) => onChange(e, index)}
                                 value={user.name_ingame}
                                 error={error}
+                                disabled
                                 />
 
                                 </div>
                             })
                         }
 
-                        <button
+                         <button
+                            disabled
                             type="submit"
-                            className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                            className="bg-purple-800 focus:outline-none shadow-inner cursor-not-allowed text-blue-800 font-semibold px-6 py-3 mt-4 w-full"
                         >
-                            Submit
+                            Maaf Pendaftaran Sudah Kami Tutup 
                         </button>
                         <ToastContainer
                         position="top-right"
@@ -248,7 +266,7 @@ function RegisterGamePlayer({history}) {
                         pauseOnHover
                         />
                     </form>
-                    <section className="flex flex-col justify-center">
+                    {/* <section className="flex flex-col justify-center">
                          <button
                          onClick={addUser}
                          className="bg-teal-400 hover:bg-teal-300 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
@@ -261,7 +279,7 @@ function RegisterGamePlayer({history}) {
                          >
                          Hapus peserta
                          </button>
-                    </section>
+                    </section> */}
                 </div>
                 </Fade>
         </div>
