@@ -8,7 +8,7 @@ export default function Select({labelName, name, value, children, onClick, error
     const selected = items.find((item) => item.props.value === value)
 
     function toggleSelect() {
-        setToggle(() => !toggle)
+        setToggle(() => toggle)
     }
 
     function clickOutSide(ev) {
@@ -30,7 +30,7 @@ export default function Select({labelName, name, value, children, onClick, error
                 {labelName}
             </label>
             <div className="relative" ref={selectWrapper} onClick={toggleSelect}>
-                <div className={["flex justify-between cursor-pointer bg-gray-800 focus:outline-none transition-all duration-200 border px-6 py-4 w-full",
+                <div className={["flex justify-between cursor-not-allowed bg-gray-800 focus:outline-none transition-all duration-200 border px-6 py-4 w-full",
                 toggle ? "border-teal-500" : "border-gray-800", error ? "border-red-500" : "border-gray-800"].join(" ")}>
                     <span className="text-gray-500">
                         {selected?.props.children} 

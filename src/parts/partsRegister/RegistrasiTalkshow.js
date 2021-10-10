@@ -81,19 +81,23 @@ function RegistrasiTalkshow({history}) {
             name="email"
             type="email"
             placeholder="Johnsmith@example.com"
+            className="cursor-not-allowed"
             labelName="Alamat Email"
             onChange={setState}
             value={email}
+            disabled
             />
 
             <Input
             name="phone_number"
             type="tel"
             placeholder="(+62) 0000-0000-0000"
+            className="cursor-not-allowed"
             labelName="No Telepon"
             onChange={setState}
             value={phone_number}
             maxLength="13"
+            disabled
             />
 
             <Input
@@ -101,17 +105,21 @@ function RegistrasiTalkshow({history}) {
             type="text"
             placeholder="John Smith"
             labelName="Nama lengkap"
+            className="cursor-not-allowed"
             onChange={setState}
             value={name}
+            disabled
             />
 
             <Input
             name="instansi"
             type="text"
             placeholder="University of Paramadina"
+            className="cursor-not-allowed"
             labelName="Instansi"
             onChange={setState}
             value={instansi}
+            disabled
             />
 
             <Select
@@ -171,10 +179,11 @@ function RegistrasiTalkshow({history}) {
             }
 
             <button
+                disabled
                 type="submit"
-                className="bg-blue-900 hover:bg-blue-800 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 mt-4 w-full"
+                className="bg-purple-800 focus:outline-none shadow-inner cursor-not-allowed text-blue-800 font-semibold px-6 py-3 mt-4 w-full"
             >
-            Submit
+                Maaf Pendaftaran Sudah Kami Tutup 
             </button>
             <ToastContainer
             position="top-right"
