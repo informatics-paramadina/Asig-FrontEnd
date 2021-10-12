@@ -67,9 +67,9 @@ export default function Hero() {
             </div>
             <div className="inset-0 absolute z-0 w-full h-full bg-black opacity-60"></div>
             <div className="absolute inset-0 z-0 w-full object-fill flex items-center justify-center">
-                <div className="items-center">
+                <div className="">
                     <LightSpeed right delay={1000}>
-                    <h2 className="text-teal-500 sm:text-6xl text-3xl animate-bounce font-semibold" style={{textShadow: "2px 2px 7px"}}>ASIG 14 | Connectivity in Digital</h2>
+                    <h2 className="text-teal-500 sm:text-4xl text-3xl animate-bounce font-semibold text-center" style={{textShadow: "2px 2px 7px"}}>ASIG 14 | Connectivity in <br className="md:hidden block" />Digital</h2>
                     </LightSpeed>
                     <LightSpeed left delay={1000}>
                     <div>

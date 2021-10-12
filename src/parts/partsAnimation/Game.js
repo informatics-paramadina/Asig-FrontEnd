@@ -21,7 +21,7 @@ export default function Game() {
 
 console.log(fetch[0]);
     return (
-        <section className="container px-4 mx-auto pt-24 md:visible invisible">
+        <section className="container px-4 mx-auto md:pt-24 pt-0 md:visible invisible">
             <div className="flex justify-between items-center">
                 <div className="w-auto">
                     <h2 className="text-2xl text-white">Show <span className="font-medium text-blue-600">Games</span></h2>
