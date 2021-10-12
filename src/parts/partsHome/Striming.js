@@ -1,18 +1,9 @@
 import React from "react";
-// import Livestream from "react-youtube";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
-import ReactLivestream from "react-livestream";
 import Iframe from "react-iframe";
 
-function OfflineComponent() {
-  console.log("hello");
-  return (
-    <div>
-      <p>I am offline now, but checkout my stream on Fridays at 5 PM EST</p>
-    </div>
-  );
-}
+
 
 export default function Striming() {
   return (
@@ -34,32 +25,26 @@ export default function Striming() {
             Live Stream Match
           </h2>
         </Fade>
-        <div className="streming absolute inset-0 flex justify-center items-center">
-          <div className="w-2/3 h-2/3">
+        <div className="streming absolute inset-0 md:flex justify-center items-center hidden">
+              <Zoom delay={1000}>
               <Iframe
-                className="w-full h-full"
+              width='800'
+              height='500'
                 src="https://www.youtube.com/embed/live_stream?channel=UC4TqGrKuaIGCXjkyXzeNDMg"
                 frameBorder="0"
-                allowFullScreen
-              ></Iframe>
-              {/* <Livestream
-              videoId="M99DShgu664"
-              id="M99DShgu664"
-              opts={{
-                playerVars: {
-                  loop: 0,
-                  mute: 0,
-                  autoplay: 1,
-                  controls: 0,
-                  showinfo: 0,
-                },
-              }}
-            /> */}
-          </div>
+              />
+              </Zoom>
         </div>
 
         <div className="streming absolute inset-0 flex justify-center items-center md:hidden mt-12">
-          <Zoom delay={1000}></Zoom>
+          <Zoom delay={1000}>
+              <Iframe
+                height='200'
+                width='350'
+                src="https://www.youtube.com/embed/live_stream?channel=UC4TqGrKuaIGCXjkyXzeNDMg"
+                frameBorder="0"
+              />
+            </Zoom>
         </div>
       </div>
     </section>
