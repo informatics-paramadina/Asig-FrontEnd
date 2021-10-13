@@ -8,7 +8,7 @@ export default function BracketValo() {
                     <h2 className="text-2xl font-semibold text-white my-10">Valorant <br /><span className="font-medium text-blue-600">Tournament</span></h2>
                 </div>
                 <div className="flex justify-center">
-                    <img src="/images/content/match_2.jpg" alt="Bracket Valorant" />
+                    <img src="/images/content/match_3.jpg" alt="Bracket Valorant" />
                 </div>
             </div>
         </section>
