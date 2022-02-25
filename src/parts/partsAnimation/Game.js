@@ -19,7 +19,7 @@ export default function Game() {
         }))
     }, [])
 
-console.log(fetch[0]);
+console.log(fetch);
     return (
         <section className="container px-4 mx-auto md:pt-24 pt-0 md:visible invisible">
             <div className="flex justify-between items-center">
